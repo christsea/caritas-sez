@@ -1,0 +1,29 @@
+# Node modules: Installed dependencies
+node_modules/
+
+# Build output: Eleventy generates the static site into this folder, so you typically don't track it
+dist/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+
+# Editor or IDE specific directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Environment variables files (if used)
+.env
+.env.local
+
+# Cache directories (if applicable)
+.cache/
+
+# Optional: Coverage directory if running tests
+coverage/

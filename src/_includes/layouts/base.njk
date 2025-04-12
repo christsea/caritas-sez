@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title | default(site.title) }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <!-- Header and navigation code here -->
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/">{{ site.title }}</a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/activities/">Activities</a></li>
+                <li><a href="/galleries/">Galleries</a></li>
+                <li><a href="/newsletters/">Newsletters</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    {# Include breadcrumbs on all pages #}
+    {% include "breadcrumbs.njk" %}
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <footer>
+       <p>&copy; {{ now | date("yyyy") }} Caritas Seychelles.</p>
+    </footer>
+    <script src="/js/main.js"></script>
+</body>
+</html>

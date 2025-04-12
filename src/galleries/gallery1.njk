@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+title: "Gallery: Community Event"
+---
+
+<section class="gallery-detail" style="padding: 2em; max-width: 1200px; margin: 0 auto; text-align: center;">
+  <h1>Gallery: Community Event</h1>
+  <div id="lightgallery" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: center;">
+    {% if gallery.data.images %}
+      {% for item in gallery.data.images %}
+        <a href="{{ item.image }}" style="display: block;">
+          <img src="{{ item.image | replace('-full', '-thumb') }}" alt="Gallery Image" style="max-width: 200px; height: auto; border-radius: 4px;">
+        </a>
+      {% endfor %}
+    {% else %}
+      <!-- If no images are found in front matter, show fallback images. -->
+      <p>No images available for this gallery.</p>
+    {% endif %}
+  </div>
+</section>
+
+<!-- LightGallery Styles and Script -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/css/lightgallery-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/lightgallery.umd.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const galleryElement = document.getElementById("lightgallery");
+    if (galleryElement) {
+      lightGallery(galleryElement, { selector: 'a' });
+    }
+  });
+</script>

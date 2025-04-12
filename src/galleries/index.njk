@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: "Galleries"
+---
+
+<section class="galleries" style="padding: 2em; text-align: center;">
+  <h1>Photo Galleries</h1>
+
+  {% set galleryCount = collections.galleries | length %}
+
+  {% if galleryCount > 0 %}
+    <div class="galleries-grid"
+         style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: center; max-width: 1200px; margin: 0 auto;">
+      {% for gallery in collections.galleries %}
+        <div class="gallery-card"
+             style="flex: 0 1 calc(33.33% - 1em); border: 1px solid #ddd; border-radius: 4px; overflow: hidden; margin-bottom: 1em;">
+          {% if gallery.data.thumbnail %}
+            <img src="{{ gallery.data.thumbnail }}" alt="{{ gallery.data.title }}"
+                 style="width: 100%; height: auto;">
+          {% else %}
+            <div style="padding: 1em; background-color: #f2f2f2;">No Thumbnail</div>
+          {% endif %}
+          <div style="padding: 1em;">
+            <h3 style="margin: 0;">{{ gallery.data.title | default("Untitled Gallery") }}</h3>
+            <a href="{{ gallery.url }}" class="btn" style="display: inline-block; margin-top: 0.5em;">View Gallery</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <!-- Fallback if no galleries exist at all -->
+    <p style="margin-top: 2em;">
+      No galleries have been created yet! Please add a new gallery in 
+      <code>src/galleries/</code> or via the CMS.
+    </p>
+  {% endif %}
+</section>

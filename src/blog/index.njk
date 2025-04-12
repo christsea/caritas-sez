@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+title: "Blog"
+pagination:
+  data: collections.blog
+  size: 6
+  alias: post
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/index.html{% else %}index.html{% endif %}"
+---
+
+<section class="blog" style="padding: 2em; text-align: center;">
+  <h1>Our Blog</h1>
+  {% if pagination.items | length %}
+    <ul style="
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 1200px;
+    ">
+      {% for post in pagination.items %}
+        <li style="
+          flex: 0 1 calc(33.33% - 1em);
+          border: 1px solid #ddd;
+          padding: 1em;
+          border-radius: 4px;
+          text-align: left;
+          background: #fff;
+        ">
+          <h2 style="margin-top: 0;">
+            <a href="{{ post.url }}" style="color: #800000; text-decoration: none;">
+              {{ post.data.title | default("Untitled Post") }}
+            </a>
+          </h2>
+          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
+            {{ post.date | date("LLL dd, yyyy") }}
+          </p>
+          <p style="margin: 0 0 0.5em;">
+            {{ post.data.excerpt | default(post.templateContent | safe | truncate(150, true)) }}
+          </p>
+          <a href="{{ post.url }}" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </li>
+      {% endfor %}
+    </ul>
+    
+    {% if pagination.pages.length > 1 %}
+      <nav class="pagination" style="margin-top: 2em;">
+        {% for page in pagination.pages %}
+          {% if page.url %}
+            <a href="{{ page.url }}" style="margin: 0 0.5em; text-decoration: none; color: #800000;">
+              {{ page.pageNumber + 1 }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    {% endif %}
+    
+  {% else %}
+    <p>No blog posts found.</p>
+  {% endif %}
+</section>

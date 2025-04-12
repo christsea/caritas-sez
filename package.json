@@ -1,0 +1,16 @@
+{
+  "name": "eleventy-charity-starter",
+  "version": "1.0.0",
+  "description": "A starter project for a charity organization website using Eleventy.",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "lightgallery": "^2.3.0",
+    "luxon": "^3.3.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

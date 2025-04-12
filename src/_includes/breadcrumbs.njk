@@ -1,0 +1,32 @@
+{# 
+  Breadcrumbs snippet:
+  - Splits the current page URL into segments.
+  - Generates links for each segment.
+  - If the URL is just the homepage ("/"), it shows only "Home".
+  We start by grabbing the current page URL from the page.url variable.
+
+The URL is split on / and any empty segments (from leading/trailing slashes) are removed.
+
+If there are segments, we loop through them. For each segment, we append it to a cumulative path (path) and generate a link.
+
+The filter | replace("-", " ") | title is optional—it converts hyphens to spaces and then title-cases the segment so it looks nicer in the breadcrumb.
+
+If no segments exist (i.e. the homepage), it just outputs a single "Home" link.
+#}
+{% set url = page.url %}
+{% set segments = url.split('/') | reject("equalto", "") | list %}
+
+{% if segments | length > 0 %}
+  <nav class="breadcrumbs">
+    <a href="/">Home</a>
+    {% set path = "" %}
+    {% for segment in segments %}
+      {% set path = path + "/" + segment %}
+      &raquo; <a href="{{ path }}/">{{ segment | replace("-", " ") | title }}</a>
+    {% endfor %}
+  </nav>
+{% else %}
+  <nav class="breadcrumbs">
+    <a href="/">Home</a>
+  </nav>
+{% endif %}
