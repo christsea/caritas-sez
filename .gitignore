@@ -2,7 +2,7 @@
 node_modules/
 
 # Build output: Eleventy generates the static site into this folder, so you typically don't track it
-dist/
+# dist/
 
 # Log files
 npm-debug.log*
