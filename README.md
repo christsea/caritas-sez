@@ -1,6 +1,6 @@
-# Eleventy Charity Starter
+# Caritas Seychelles Project
 
-This is a starter project for a charity organization website built with Eleventy. It includes pages for Home, About, Contact, Activities, Blog, Newsletters, and Galleries with a burgundy theme and LightGallery integration.
+This is a project for Caritas Seychelles website built with Eleventy. It includes pages for Home, About, Contact, Activities, Blog, Newsletters, and Galleries with a burgundy theme and LightGallery integration.
 
 ## Installation
 
