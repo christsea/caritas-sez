@@ -1,0 +1,239 @@
+/* Reset and Global Styling */
+/* Dummy CSS for Charity Website with burgundy theme */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+/* Header and Footer */
+header,
+footer {
+  background-color: #800000;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Navigation */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+  position: relative;
+  z-index: 1000;
+}
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+nav {
+  display: flex;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  margin: 0 1em;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hamburger button – initially hidden */
+/* Hamburger (Mobile) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+.hamburger::before {
+  top: -8px;
+}
+.hamburger::after {
+  top: 8px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  padding: 0.5em 1em;
+  background-color: #f2f2f2;
+  font-size: 0.9em;
+  margin: 1em 0;
+}
+.breadcrumbs a {
+  color: #800000;
+  text-decoration: none;
+  margin-right: 0.5em;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #800000;
+    flex-direction: column;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+  }
+  nav.active {
+    display: flex; /* Shown when toggled */
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    display: block;
+    margin: 1em 0;
+  }
+  .nav-toggle {
+    display: block; /* Show hamburger on mobile */
+  }
+}
+
+/* Hero Section */
+.hero {
+  background-size: cover;
+  background-position: center;
+  /* Top padding set to 35vh to display the top of the image */
+  padding-top: 35vh;
+  padding-bottom: 4em;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+  color: #fff;
+}
+.hero-content h1 {
+  margin: 0.5em 0;
+}
+
+/* Mission Section */
+.mission,
+.what-we-do,
+.news,
+.contact-prompt {
+  padding: 2em;
+  text-align: center;
+}
+
+/* What We Do Section */
+.what-we-do {
+  background-color: #f2f2f2;
+}
+.what-we-do .what-we-do-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 1em;
+}
+.what-we-do .what-we-do-content {
+  max-width: 500px;
+  text-align: left;
+}
+.what-we-do .what-we-do-image {
+  max-width: 500px;
+}
+.what-we-do .what-we-do-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Featured Stories Section */
+.features {
+  background-color: #f8f8f8;
+}
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 1em;
+}
+.feature-card {
+  flex: 1 1 300px;
+  max-width: 320px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+}
+.feature-card img {
+  width: 100%;
+  height: auto;
+}
+
+/* Latest News Section */
+.news ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.news li {
+  margin-bottom: 1em;
+}
+.news a {
+  color: #800000;
+  text-decoration: none;
+  font-weight: bold;
+}
+.news .post-date {
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Buttons */
+.btn {
+  background-color: #800000;
+  color: #fff;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 1em;
+}
+
+/* Contact Prompt and Others */
+.contact-prompt {
+  background-color: #eee;
+}

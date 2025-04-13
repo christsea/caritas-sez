@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery: Community Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <!-- Header and navigation code here -->
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/">Caritas Seychelles</a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/activities/">Activities</a></li>
+                <li><a href="/galleries/">Galleries</a></li>
+                <li><a href="/newsletters/">Newsletters</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    
+    
+
+
+
+
+  <nav class="breadcrumbs">
+    <a href="/">Home</a>
+    
+    
+      
+      &raquo; <a href="/galleries/">Galleries</a>
+    
+      
+      &raquo; <a href="/galleries/gallery1/">Gallery1</a>
+    
+  </nav>
+
+
+
+    <main>
+      
+<section class="gallery-detail" style="padding: 2em; max-width: 1200px; margin: 0 auto; text-align: center;">
+  <h1>Gallery: Community Event</h1>
+  <div id="lightgallery" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: center;">
+    
+      <!-- If no images are found in front matter, show fallback images. -->
+      <p>No images available for this gallery.</p>
+    
+  </div>
+</section>
+
+<!-- LightGallery Styles and Script -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/css/lightgallery-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/lightgallery.umd.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const galleryElement = document.getElementById("lightgallery");
+    if (galleryElement) {
+      lightGallery(galleryElement, { selector: 'a' });
+    }
+  });
+</script>
+
+    </main>
+
+    <footer>
+       <p>&copy; 2025 Caritas Seychelles.</p>
+    </footer>
+    <script src="/js/main.js"></script>
+</body>
+</html>
