@@ -32,82 +32,74 @@ title: "Home"
   </div>
 </section>
 
-<!-- Featured Stories Section with Centered Label -->
+<!-- Featured Stories Section with New Categories -->
 <section class="features" style="padding: 2em; background-color: #f8f8f8; text-align: center;">
   <h2 style="text-align: center;">Featured Stories</h2>
   <div class="feature-cards" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2em; margin-top: 1em;">
+    
+    <!-- Feature Card 1: Community Outreach -->
     <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
-      <img src="/images/dummy-story1.jpg" alt="Community Outreach" style="width: 100%; height: auto;">
+      <img src="/images/dummy-community-outreach.jpg" alt="Community Outreach" style="width: 100%; height: auto;">
       <div style="padding: 1em;">
-        <h3>Community Outreach</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <a href="/activities/" class="btn">Discover More</a>
-      </div>
-    </div>
-    <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
-      <img src="/images/dummy-story2.jpg" alt="Volunteer Program" style="width: 100%; height: auto;">
-      <div style="padding: 1em;">
-        <h3>Volunteer Program</h3>
+        <h3 style="margin: 0;">Community Outreach</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <a href="/blog/" class="btn">Join Us</a>
+        <a href="/blog/community-outreach/" class="btn" style="display: inline-block; margin-top: 0.5em;">Discover More</a>
       </div>
     </div>
+    
+    <!-- Feature Card 2: Impact Stories -->
     <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
-      <img src="/images/dummy-story3.jpg" alt="Impact Stories" style="width: 100%; height: auto;">
+      <img src="/images/dummy-impact-stories.jpg" alt="Impact Stories" style="width: 100%; height: auto;">
       <div style="padding: 1em;">
-        <h3>Impact Stories</h3>
-        <p>
-          During the time of disaster, Caritas Seychelles extended its services to the communities.  Some members were engaged at the Centre helping in the sorting and distribution of necessities to the people. Several members from parishes groups visited the families affected at their homes.  Some 35 families were visited and assisted in various forms.  Some were referred to different organisations and experts for follow-up.   Food and other necessities were distributed to those in need.
+        <h3 style="margin: 0;">Impact Stories</h3>
+        <p> 
+          During the time of disaster, Caritas Seychelles extended its services to the communities.  Some members were engaged at the Centre helping in the sorting and distribution of necessities to the people. Several members from parishes groups visited the families affected at their homes.  Some 35 families were visited and assisted in various forms.
         </p>
-        <a href="/blog/" class="btn">Read More</a>
+        <a href="/blog/impact-stories/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
       </div>
     </div>
+    
+    <!-- Feature Card 3: Volunteer Program -->
+    <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
+      <img src="/images/dummy-volunteer-program.jpg" alt="Volunteer Program" style="width: 100%; height: auto;">
+      <div style="padding: 1em;">
+        <h3 style="margin: 0;">Volunteer Program</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="/blog/volunteer-program/" class="btn" style="display: inline-block; margin-top: 0.5em;">Join Us</a>
+      </div>
+    </div>
+    
   </div>
 </section>
 
-<!-- Latest News Section in Three Columns -->
-{% set allBlogPosts = collections.blog %}
-{% set latestPosts = allBlogPosts.slice(0, 3) %}
+<!-- Latest News -->
+
+{% set _allBlogPosts = collections.blog %}
+{% set latestPosts = _allBlogPosts.slice(0, 3) %}
 
 <section class="news" style="padding: 2em; text-align: center;">
   <h2>Latest News</h2>
-
   {% if latestPosts | length %}
-    <ul style="
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1em;
-      list-style: none;
-      padding: 0;
-      max-width: 800px; /* a bit wider for text */
-      margin: 0 auto;
-    ">
+    <!-- Use the class news-cards on the container -->
+    <div class="news-cards">
       {% for post in latestPosts %}
-      <li style="
-        flex: 0 1 calc(33.33% - 1em);
-        text-align: left;
-        margin-bottom: 1em;
-        border: 1px solid #ddd;
-        padding: 1em;
-        border-radius: 4px;
-      ">
-        <h3 style="margin-top: 0;">
-          <a href="{{ post.url }}" style="color: #800000; text-decoration: none; font-weight: bold;">
-            {{ post.data.title | default("Untitled Post") }}
-          </a>
-        </h3>
-        <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
-          {{ post.date | date("LLL dd, yyyy") }}
-        </p>
-        <p style="margin: 0;">
-          {{ post.data.excerpt | default("No excerpt provided.") }}
-        </p>
-      </li>
+        <!-- Use class news-card on individual items -->
+        <div class="news-card">
+          <h3>
+            <a href="{{ post.url }}" style="color: #800000; text-decoration: none; font-weight: bold;">
+              {{ post.data.title | default("Untitled Post") }}
+            </a>
+          </h3>
+          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
+            {{ post.date | date("LLL dd, yyyy") }}
+          </p>
+          <p style="margin: 0 0 0.5em;">
+            {{ post.data.excerpt | default(post.templateContent | safe | slice(0,150) ~ '...') }}
+          </p>
+          <a href="{{ post.url }}" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </div>
       {% endfor %}
-    </ul>
+    </div>
   {% else %}
     <p>No blog posts found.</p>
   {% endif %}

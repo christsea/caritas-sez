@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <title>Home | Caritas Seychelles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <!-- Header and navigation code here -->
-        <div class="nav-container">
-            <div class="logo">
-                <a href="/">Caritas Seychelles</a>
-            </div>
-            <nav id="nav-menu">
-                <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/activities/">Activities</a></li>
-                <li><a href="/galleries/">Galleries</a></li>
-                <li><a href="/newsletters/">Newsletters</a></li>
-                <li><a href="/contact/">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-        </div>
-    </header>
+  <header class="site-header">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="/">Caritas Seychelles</a>
+    </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/activities/">Activities</a></li>
+        <li><a href="/galleries/">Galleries</a></li>
+        <li><a href="/newsletters/">Newsletters</a></li>
+      </ul>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+  </div>
+</header>
 
+
+  <!-- Breadcrumbs, if needed -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
     
     
-
-
-
-
-  <nav class="breadcrumbs">
-    <a href="/">Home</a>
+      <ul>
+        
+          <li>
+            
+              <span>Home</span>
+            
+          </li>
+        
+      </ul>
+    
   </nav>
 
-
-
-    <main>
-      
+  <main>
+    
 <!-- Hero Section (example remains unchanged) -->
 <section class="hero" style="background: url('/images/dummy-home-hero.jpg') no-repeat center center/cover; padding-top: 35vh; padding-bottom: 4em; padding-left: 2em; padding-right: 2em; text-align: center;">
   <div class="hero-content">
@@ -73,124 +77,106 @@
   </div>
 </section>
 
-<!-- Featured Stories Section with Centered Label -->
+<!-- Featured Stories Section with New Categories -->
 <section class="features" style="padding: 2em; background-color: #f8f8f8; text-align: center;">
   <h2 style="text-align: center;">Featured Stories</h2>
   <div class="feature-cards" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2em; margin-top: 1em;">
+    
+    <!-- Feature Card 1: Community Outreach -->
     <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
-      <img src="/images/dummy-story1.jpg" alt="Community Outreach" style="width: 100%; height: auto;">
+      <img src="/images/dummy-community-outreach.jpg" alt="Community Outreach" style="width: 100%; height: auto;">
       <div style="padding: 1em;">
-        <h3>Community Outreach</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <a href="/activities/" class="btn">Discover More</a>
-      </div>
-    </div>
-    <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
-      <img src="/images/dummy-story2.jpg" alt="Volunteer Program" style="width: 100%; height: auto;">
-      <div style="padding: 1em;">
-        <h3>Volunteer Program</h3>
+        <h3 style="margin: 0;">Community Outreach</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <a href="/blog/" class="btn">Join Us</a>
+        <a href="/blog/community-outreach/" class="btn" style="display: inline-block; margin-top: 0.5em;">Discover More</a>
       </div>
     </div>
+    
+    <!-- Feature Card 2: Impact Stories -->
     <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
-      <img src="/images/dummy-story3.jpg" alt="Impact Stories" style="width: 100%; height: auto;">
+      <img src="/images/dummy-impact-stories.jpg" alt="Impact Stories" style="width: 100%; height: auto;">
       <div style="padding: 1em;">
-        <h3>Impact Stories</h3>
-        <p>
-          During the time of disaster, Caritas Seychelles extended its services to the communities.  Some members were engaged at the Centre helping in the sorting and distribution of necessities to the people. Several members from parishes groups visited the families affected at their homes.  Some 35 families were visited and assisted in various forms.  Some were referred to different organisations and experts for follow-up.   Food and other necessities were distributed to those in need.
+        <h3 style="margin: 0;">Impact Stories</h3>
+        <p> 
+          During the time of disaster, Caritas Seychelles extended its services to the communities.  Some members were engaged at the Centre helping in the sorting and distribution of necessities to the people. Several members from parishes groups visited the families affected at their homes.  Some 35 families were visited and assisted in various forms.
         </p>
-        <a href="/blog/" class="btn">Read More</a>
+        <a href="/blog/impact-stories/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
       </div>
     </div>
+    
+    <!-- Feature Card 3: Volunteer Program -->
+    <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
+      <img src="/images/dummy-volunteer-program.jpg" alt="Volunteer Program" style="width: 100%; height: auto;">
+      <div style="padding: 1em;">
+        <h3 style="margin: 0;">Volunteer Program</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="/blog/volunteer-program/" class="btn" style="display: inline-block; margin-top: 0.5em;">Join Us</a>
+      </div>
+    </div>
+    
   </div>
 </section>
 
-<!-- Latest News Section in Three Columns -->
+<!-- Latest News -->
+
 
 
 
 <section class="news" style="padding: 2em; text-align: center;">
   <h2>Latest News</h2>
-
   
-    <ul style="
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1em;
-      list-style: none;
-      padding: 0;
-      max-width: 800px; /* a bit wider for text */
-      margin: 0 auto;
-    ">
+    <!-- Use the class news-cards on the container -->
+    <div class="news-cards">
       
-      <li style="
-        flex: 0 1 calc(33.33% - 1em);
-        text-align: left;
-        margin-bottom: 1em;
-        border: 1px solid #ddd;
-        padding: 1em;
-        border-radius: 4px;
-      ">
-        <h3 style="margin-top: 0;">
-          <a href="/blog/post4/" style="color: #800000; text-decoration: none; font-weight: bold;">
-            Youth Exchange
-          </a>
-        </h3>
-        <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
-          Mar 15, 2025
-        </p>
-        <p style="margin: 0;">
-          Youth Excehnage. Alienum phaedrum torquatos nec eu.
-        </p>
-      </li>
+        <!-- Use class news-card on individual items -->
+        <div class="news-card">
+          <h3>
+            <a href="/blog/volunteer-program-2/" style="color: #800000; text-decoration: none; font-weight: bold;">
+              Volunteer Program Post 2
+            </a>
+          </h3>
+          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
+            May 06, 2025
+          </p>
+          <p style="margin: 0 0 0.5em;">
+            Celebrating our volunteer achievements this month.
+          </p>
+          <a href="/blog/volunteer-program-2/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </div>
       
-      <li style="
-        flex: 0 1 calc(33.33% - 1em);
-        text-align: left;
-        margin-bottom: 1em;
-        border: 1px solid #ddd;
-        padding: 1em;
-        border-radius: 4px;
-      ">
-        <h3 style="margin-top: 0;">
-          <a href="/blog/post3/" style="color: #800000; text-decoration: none; font-weight: bold;">
-            Award for Emergency
-          </a>
-        </h3>
-        <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
-          Mar 15, 2025
-        </p>
-        <p style="margin: 0;">
-          During the night of 7th December 2024, Seychelles was shaken by an explosion of dynamite at a construction quarry in the east of the island of Mahe.
-        </p>
-      </li>
+        <!-- Use class news-card on individual items -->
+        <div class="news-card">
+          <h3>
+            <a href="/blog/volunteer-program-1/" style="color: #800000; text-decoration: none; font-weight: bold;">
+              Volunteer Program Post 1
+            </a>
+          </h3>
+          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
+            May 05, 2025
+          </p>
+          <p style="margin: 0 0 0.5em;">
+            Volunteers in action during our local events.
+          </p>
+          <a href="/blog/volunteer-program-1/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </div>
       
-      <li style="
-        flex: 0 1 calc(33.33% - 1em);
-        text-align: left;
-        margin-bottom: 1em;
-        border: 1px solid #ddd;
-        padding: 1em;
-        border-radius: 4px;
-      ">
-        <h3 style="margin-top: 0;">
-          <a href="/blog/post2/" style="color: #800000; text-decoration: none; font-weight: bold;">
-            Charity Event Recap
-          </a>
-        </h3>
-        <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
-          Feb 15, 2025
-        </p>
-        <p style="margin: 0;">
-          No excerpt provided.
-        </p>
-      </li>
+        <!-- Use class news-card on individual items -->
+        <div class="news-card">
+          <h3>
+            <a href="/blog/community-outreach-2/" style="color: #800000; text-decoration: none; font-weight: bold;">
+              Community Outreach Post 2
+            </a>
+          </h3>
+          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
+            May 02, 2025
+          </p>
+          <p style="margin: 0 0 0.5em;">
+            Highlights and stories from our community outreach.
+          </p>
+          <a href="/blog/community-outreach-2/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </div>
       
-    </ul>
+    </div>
   
 </section>
 
@@ -202,11 +188,12 @@
   <a href="/contact/" class="btn">Contact Us</a>
 </section>
 
-    </main>
+  </main>
 
-    <footer>
-       <p>&copy; 2025 Caritas Seychelles.</p>
-    </footer>
-    <script src="/js/main.js"></script>
+  <footer class="site-footer">
+  <p>&copy; 2025 Caritas Seychelles</p>
+</footer>
+
+  <script src="/js/main.js"></script>
 </body>
 </html>

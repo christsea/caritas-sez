@@ -1,74 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <title>Contact | Caritas Seychelles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <!-- Header and navigation code here -->
-        <div class="nav-container">
-            <div class="logo">
-                <a href="/">Caritas Seychelles</a>
-            </div>
-            <nav id="nav-menu">
-                <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/activities/">Activities</a></li>
-                <li><a href="/galleries/">Galleries</a></li>
-                <li><a href="/newsletters/">Newsletters</a></li>
-                <li><a href="/contact/">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-        </div>
-    </header>
+  <header class="site-header">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="/">Caritas Seychelles</a>
+    </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/activities/">Activities</a></li>
+        <li><a href="/galleries/">Galleries</a></li>
+        <li><a href="/newsletters/">Newsletters</a></li>
+      </ul>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+  </div>
+</header>
 
+
+  <!-- Breadcrumbs, if needed -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
     
     
-
-
-
-
-  <nav class="breadcrumbs">
-    <a href="/">Home</a>
-    
-    
-      
-      &raquo; <a href="/contact/">Contact</a>
+      <ul>
+        
+          <li>
+            
+              <a href="/">Home</a> &raquo;
+            
+          </li>
+        
+          <li>
+            
+              <span>Contact</span>
+            
+          </li>
+        
+      </ul>
     
   </nav>
 
-
-
-    <main>
-      
+  <main>
+    
 <!-- Hero Banner -->
+<!--
 <section class="hero" style="background: url('/images/dummy-contact-hero.jpg') no-repeat center center/cover; padding: 4em 0; text-align: center; color: #fff;">
   <div class="hero-content">
     <h1>Contact Us</h1>
   </div>
 </section>
+-->
 
 <!-- Contact Information & Map -->
 <section class="contact-info" style="padding: 2em; max-width: 800px; margin: 0 auto;">
   <h2>We'd Love to Hear From You</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+  <p>Send us an Email</p>
   
   <!-- Contact Form -->
   <form action="https://formspree.io/f/your-form-id" method="POST" style="display: flex; flex-direction: column; gap: 1em;">
-    <input type="text" name="name" placeholder="Your Name" required style="padding: 0.5em;">
+    <input type="text" name="name" placeholder="Your Name" rows="10" required style="padding: 0.5em;">
     <input type="email" name="email" placeholder="Your Email" required style="padding: 0.5em;">
     <textarea name="message" placeholder="Your Message" required style="padding: 0.5em;"></textarea>
     <button type="submit" class="btn" style="background-color: #800000; color: #fff; padding: 0.75em 1.5em; border: none; border-radius: 4px;">Send Message</button>
   </form>
-  <div></div>
+  <div style="padding: 3em">
+  </div>
+  <h2>Our Location</h2>
   <!-- Interactive Map -->
   <div id="map" style="height: 300px; margin: 1em 0;"></div>
 </section>
@@ -84,11 +93,12 @@
   L.marker([-4.628577, 55.455362]).addTo(map).bindPopup('Our Office Location').openPopup();
 </script>
 
-    </main>
+  </main>
 
-    <footer>
-       <p>&copy; 2025 Caritas Seychelles.</p>
-    </footer>
-    <script src="/js/main.js"></script>
+  <footer class="site-footer">
+  <p>&copy; 2025 Caritas Seychelles</p>
+</footer>
+
+  <script src="/js/main.js"></script>
 </body>
 </html>

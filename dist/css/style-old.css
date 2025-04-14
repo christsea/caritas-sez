@@ -1,4 +1,5 @@
-/* Global Reset */
+/* Reset and Global Styling */
+/* Dummy CSS for Charity Website with burgundy theme */
 * {
   box-sizing: border-box;
 }
@@ -10,8 +11,8 @@ body {
 }
 
 /* Header and Footer */
-.site-header,
-.site-footer {
+header,
+footer {
   background-color: #800000;
   color: #fff;
   text-align: center;
@@ -52,7 +53,8 @@ nav ul li a {
   font-weight: bold;
 }
 
-/* Hamburger for Mobile */
+/* Hamburger button – initially hidden */
+/* Hamburger (Mobile) */
 .nav-toggle {
   display: none;
   background: none;
@@ -60,20 +62,21 @@ nav ul li a {
   cursor: pointer;
 }
 .hamburger {
+  display: block;
   width: 25px;
   height: 2px;
   background-color: #fff;
   position: relative;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 .hamburger::before,
 .hamburger::after {
   content: "";
+  position: absolute;
   width: 25px;
   height: 2px;
   background-color: #fff;
-  position: absolute;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 .hamburger::before {
   top: -8px;
@@ -84,26 +87,17 @@ nav ul li a {
 
 /* Breadcrumbs */
 .breadcrumbs {
-  background-color: #f2f2f2;
   padding: 0.5em 1em;
+  background-color: #f2f2f2;
   font-size: 0.9em;
   margin: 1em 0;
 }
-.breadcrumbs ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-.breadcrumbs li {
-  margin-right: 0.5em;
-}
-.breadcrumbs li a {
+.breadcrumbs a {
   color: #800000;
   text-decoration: none;
+  margin-right: 0.5em;
 }
-.breadcrumbs li a:hover {
+.breadcrumbs a:hover {
   text-decoration: underline;
 }
 
@@ -116,11 +110,11 @@ nav ul li a {
     right: 0;
     background-color: #800000;
     flex-direction: column;
-    display: none;
+    display: none; /* Hidden by default */
     z-index: 1000;
   }
   nav.active {
-    display: flex;
+    display: flex; /* Shown when toggled */
   }
   nav ul {
     flex-direction: column;
@@ -130,7 +124,12 @@ nav ul li a {
     margin: 1em 0;
   }
   .nav-toggle {
-    display: block;
+    display: block; /* Show hamburger on mobile */
+  }
+  .news-card,
+  .blog-card {
+    flex: 0 1 100%;
+    max-width: 100%;
   }
 }
 
@@ -138,15 +137,19 @@ nav ul li a {
 .hero {
   background-size: cover;
   background-position: center;
-  padding-top: 35vh; /* Adjust to show the top of your background image */
+  /* Top padding set to 35vh to display the top of the image */
+  padding-top: 35vh;
   padding-bottom: 4em;
   padding-left: 2em;
   padding-right: 2em;
   text-align: center;
   color: #fff;
 }
+.hero-content h1 {
+  margin: 0.5em 0;
+}
 
-/* Content Sections */
+/* Mission Section */
 .mission,
 .what-we-do,
 .news,
@@ -180,7 +183,52 @@ nav ul li a {
   border-radius: 4px;
 }
 
-/* Grid Containers for News and Blog */
+/* Featured Stories Section */
+.features {
+  background-color: #f8f8f8;
+}
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 1em;
+}
+.feature-card {
+  flex: 1 1 300px;
+  max-width: 320px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+}
+.feature-card img {
+  width: 100%;
+  height: auto;
+}
+
+/* Latest News Section */
+.news ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.news li {
+  margin-bottom: 1em;
+}
+.news a {
+  color: #800000;
+  text-decoration: none;
+  font-weight: bold;
+}
+.news .post-date {
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* New CSS test for mobile  */
+/* Flex container for the card layouts */
 .news-cards,
 .blog-cards {
   display: flex;
@@ -191,7 +239,7 @@ nav ul li a {
   max-width: 1200px;
 }
 
-/* Individual Card Styles: Desktop (Three Columns) */
+/* Styles for individual cards on desktop (three columns) */
 .news-card,
 .blog-card {
   flex: 0 1 calc(33.33% - 1em);
@@ -201,15 +249,6 @@ nav ul li a {
   padding: 1em;
   text-align: left;
   overflow: hidden;
-}
-
-/* On Mobile: One Column */
-@media (max-width: 768px) {
-  .news-card,
-  .blog-card {
-    flex: 0 1 100%;
-    max-width: 100%;
-  }
 }
 
 /* Buttons */
@@ -223,22 +262,39 @@ nav ul li a {
   margin-top: 1em;
 }
 
-/* Post Content */
-.post-content {
-  max-width: 800px;
+/* Contact Prompt and Others */
+.contact-prompt {
+  background-color: #eee;
+}
+
+/* Container for News and Blog cards */
+.news-cards,
+.blog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
   margin: 0 auto;
-  padding: 2em;
+  max-width: 1200px;
+}
+
+/* Individual Card Styles for Desktop: 3 columns */
+.news-card,
+.blog-card {
+  flex: 0 1 calc(33.33% - 1em);
+  max-width: 320px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1em;
   text-align: left;
+  overflow: hidden;
 }
-.post-header h1 {
-  margin-bottom: 0.5em;
+
+/* Mobile - One Column Layout */
+@media (max-width: 768px) {
+  .news-card,
+  .blog-card {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
 }
-.post-meta {
-  margin-bottom: 1.5em;
-  font-size: 0.9em;
-  color: #666;
-}
-.post-body p {
-  margin: 1em 0;
-}
-/* Footer override already styled above */

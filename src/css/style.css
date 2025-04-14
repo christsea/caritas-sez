@@ -1,5 +1,4 @@
-/* Reset and Global Styling */
-/* Dummy CSS for Charity Website with burgundy theme */
+/* Global Reset */
 * {
   box-sizing: border-box;
 }
@@ -11,8 +10,8 @@ body {
 }
 
 /* Header and Footer */
-header,
-footer {
+.site-header,
+.site-footer {
   background-color: #800000;
   color: #fff;
   text-align: center;
@@ -53,8 +52,7 @@ nav ul li a {
   font-weight: bold;
 }
 
-/* Hamburger button – initially hidden */
-/* Hamburger (Mobile) */
+/* Hamburger for Mobile */
 .nav-toggle {
   display: none;
   background: none;
@@ -62,21 +60,20 @@ nav ul li a {
   cursor: pointer;
 }
 .hamburger {
-  display: block;
   width: 25px;
   height: 2px;
   background-color: #fff;
   position: relative;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 .hamburger::before,
 .hamburger::after {
   content: "";
-  position: absolute;
   width: 25px;
   height: 2px;
   background-color: #fff;
-  transition: all 0.3s ease;
+  position: absolute;
+  transition: 0.3s ease;
 }
 .hamburger::before {
   top: -8px;
@@ -87,17 +84,26 @@ nav ul li a {
 
 /* Breadcrumbs */
 .breadcrumbs {
-  padding: 0.5em 1em;
   background-color: #f2f2f2;
+  padding: 0.5em 1em;
   font-size: 0.9em;
   margin: 1em 0;
 }
-.breadcrumbs a {
-  color: #800000;
-  text-decoration: none;
+.breadcrumbs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.breadcrumbs li {
   margin-right: 0.5em;
 }
-.breadcrumbs a:hover {
+.breadcrumbs li a {
+  color: #800000;
+  text-decoration: none;
+}
+.breadcrumbs li a:hover {
   text-decoration: underline;
 }
 
@@ -110,11 +116,11 @@ nav ul li a {
     right: 0;
     background-color: #800000;
     flex-direction: column;
-    display: none; /* Hidden by default */
+    display: none;
     z-index: 1000;
   }
   nav.active {
-    display: flex; /* Shown when toggled */
+    display: flex;
   }
   nav ul {
     flex-direction: column;
@@ -124,7 +130,7 @@ nav ul li a {
     margin: 1em 0;
   }
   .nav-toggle {
-    display: block; /* Show hamburger on mobile */
+    display: block;
   }
 }
 
@@ -132,19 +138,15 @@ nav ul li a {
 .hero {
   background-size: cover;
   background-position: center;
-  /* Top padding set to 35vh to display the top of the image */
-  padding-top: 35vh;
+  padding-top: 35vh; /* Adjust to show the top of your background image */
   padding-bottom: 4em;
   padding-left: 2em;
   padding-right: 2em;
   text-align: center;
   color: #fff;
 }
-.hero-content h1 {
-  margin: 0.5em 0;
-}
 
-/* Mission Section */
+/* Content Sections */
 .mission,
 .what-we-do,
 .news,
@@ -178,48 +180,36 @@ nav ul li a {
   border-radius: 4px;
 }
 
-/* Featured Stories Section */
-.features {
-  background-color: #f8f8f8;
-}
-.feature-cards {
+/* Grid Containers for News and Blog */
+.news-cards,
+.blog-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2em;
-  margin-top: 1em;
+  gap: 1em;
+  margin: 0 auto;
+  max-width: 1200px;
 }
-.feature-card {
-  flex: 1 1 300px;
+
+/* Individual Card Styles: Desktop (Three Columns) */
+.news-card,
+.blog-card {
+  flex: 0 1 calc(33.33% - 1em);
   max-width: 320px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  padding: 1em;
+  text-align: left;
   overflow: hidden;
-  text-align: center;
-}
-.feature-card img {
-  width: 100%;
-  height: auto;
 }
 
-/* Latest News Section */
-.news ul {
-  list-style: none;
-  padding: 0;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.news li {
-  margin-bottom: 1em;
-}
-.news a {
-  color: #800000;
-  text-decoration: none;
-  font-weight: bold;
-}
-.news .post-date {
-  color: #666;
-  font-size: 0.9em;
+/* On Mobile: One Column */
+@media (max-width: 768px) {
+  .news-card,
+  .blog-card {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
 }
 
 /* Buttons */
@@ -233,7 +223,22 @@ nav ul li a {
   margin-top: 1em;
 }
 
-/* Contact Prompt and Others */
-.contact-prompt {
-  background-color: #eee;
+/* Post Content */
+.post-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+  text-align: left;
 }
+.post-header h1 {
+  margin-bottom: 0.5em;
+}
+.post-meta {
+  margin-bottom: 1.5em;
+  font-size: 0.9em;
+  color: #666;
+}
+.post-body p {
+  margin: 1em 0;
+}
+/* Footer override already styled above */

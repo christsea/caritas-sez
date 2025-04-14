@@ -1,0 +1,21 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<article class="post-content">
+  <header class="post-header">
+    <h1>{{ title }}</h1>
+    <p class="post-meta">
+      Published on {{ date | date("LLL dd, yyyy") }}
+      {% if tags %} | Tags: {{ tags | join(", ") }}{% endif %}
+    </p>
+  </header>
+  <section class="post-body">
+    {{ content | safe }}
+  </section>
+  <footer class="post-footer">
+    <!-- Social share or related posts can go here -->
+  </footer>
+</article>
+{% endblock %}

@@ -1,174 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <title>Our Blog | Caritas Seychelles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <!-- Header and navigation code here -->
-        <div class="nav-container">
-            <div class="logo">
-                <a href="/">Caritas Seychelles</a>
-            </div>
-            <nav id="nav-menu">
-                <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/activities/">Activities</a></li>
-                <li><a href="/galleries/">Galleries</a></li>
-                <li><a href="/newsletters/">Newsletters</a></li>
-                <li><a href="/contact/">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-        </div>
-    </header>
+  <header class="site-header">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="/">Caritas Seychelles</a>
+    </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/activities/">Activities</a></li>
+        <li><a href="/galleries/">Galleries</a></li>
+        <li><a href="/newsletters/">Newsletters</a></li>
+      </ul>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+  </div>
+</header>
 
+
+  <!-- Breadcrumbs, if needed -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
     
     
-
-
-
-
-  <nav class="breadcrumbs">
-    <a href="/">Home</a>
-    
-    
-      
-      &raquo; <a href="/blog/">Blog</a>
+      <ul>
+        
+          <li>
+            
+              <a href="/">Home</a> &raquo;
+            
+          </li>
+        
+          <li>
+            
+              <span>Blog</span>
+            
+          </li>
+        
+      </ul>
     
   </nav>
 
-
-
-    <main>
-      
+  <main>
+    
 <section class="blog" style="padding: 2em; text-align: center;">
   <h1>Our Blog</h1>
   
-    <ul style="
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1em;
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      max-width: 1200px;
-    ">
+    <!-- Use blog-cards as container -->
+    <div class="blog-cards">
       
-        <li style="
-          flex: 0 1 calc(33.33% - 1em);
-          border: 1px solid #ddd;
-          padding: 1em;
-          border-radius: 4px;
-          text-align: left;
-          background: #fff;
-        ">
-          <h2 style="margin-top: 0;">
-            <a href="/blog/post4/" style="color: #800000; text-decoration: none;">
-              Youth Exchange
+        <!-- Each post card uses blog-card class -->
+        <div class="blog-card">
+          <h2>
+            <a href="/blog/volunteer-program-2/" style="color: #800000; text-decoration: none;">
+              Volunteer Program Post 2
             </a>
           </h2>
           <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
-            Mar 15, 2025
+            May 06, 2025
           </p>
           <p style="margin: 0 0 0.5em;">
-            Youth Excehnage. Alienum phaedrum torquatos nec eu.
+            Celebrating our volunteer achievements this month.
           </p>
-          <a href="/blog/post4/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
-        </li>
+          <a href="/blog/volunteer-program-2/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </div>
       
-        <li style="
-          flex: 0 1 calc(33.33% - 1em);
-          border: 1px solid #ddd;
-          padding: 1em;
-          border-radius: 4px;
-          text-align: left;
-          background: #fff;
-        ">
-          <h2 style="margin-top: 0;">
-            <a href="/blog/post3/" style="color: #800000; text-decoration: none;">
-              Award for Emergency
+        <!-- Each post card uses blog-card class -->
+        <div class="blog-card">
+          <h2>
+            <a href="/blog/volunteer-program-1/" style="color: #800000; text-decoration: none;">
+              Volunteer Program Post 1
             </a>
           </h2>
           <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
-            Mar 15, 2025
+            May 05, 2025
+          </p>
+          <p style="margin: 0 0 0.5em;">
+            Volunteers in action during our local events.
+          </p>
+          <a href="/blog/volunteer-program-1/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </div>
+      
+        <!-- Each post card uses blog-card class -->
+        <div class="blog-card">
+          <h2>
+            <a href="/blog/community-outreach-2/" style="color: #800000; text-decoration: none;">
+              Community Outreach Post 2
+            </a>
+          </h2>
+          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
+            May 02, 2025
+          </p>
+          <p style="margin: 0 0 0.5em;">
+            Highlights and stories from our community outreach.
+          </p>
+          <a href="/blog/community-outreach-2/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </div>
+      
+        <!-- Each post card uses blog-card class -->
+        <div class="blog-card">
+          <h2>
+            <a href="/blog/community-outreach-1/" style="color: #800000; text-decoration: none;">
+              Community Outreach Post 1
+            </a>
+          </h2>
+          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
+            May 01, 2025
+          </p>
+          <p style="margin: 0 0 0.5em;">
+            A brief overview of our recent community outreach event.
+          </p>
+          <a href="/blog/community-outreach-1/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </div>
+      
+        <!-- Each post card uses blog-card class -->
+        <div class="blog-card">
+          <h2>
+            <a href="/blog/impact-stories-2/" style="color: #800000; text-decoration: none;">
+              Impact Story Post 2
+            </a>
+          </h2>
+          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
+            Apr 26, 2025
+          </p>
+          <p style="margin: 0 0 0.5em;">
+            How impact and change met in our latest project.
+          </p>
+          <a href="/blog/impact-stories-2/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </div>
+      
+        <!-- Each post card uses blog-card class -->
+        <div class="blog-card">
+          <h2>
+            <a href="/blog/award-for-emergency-response/" style="color: #800000; text-decoration: none;">
+              Award for Emergency Response
+            </a>
+          </h2>
+          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
+            Apr 14, 2025
           </p>
           <p style="margin: 0 0 0.5em;">
             During the night of 7th December 2024, Seychelles was shaken by an explosion of dynamite at a construction quarry in the east of the island of Mahe.
           </p>
-          <a href="/blog/post3/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
-        </li>
+          <a href="/blog/award-for-emergency-response/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        </div>
       
-        <li style="
-          flex: 0 1 calc(33.33% - 1em);
-          border: 1px solid #ddd;
-          padding: 1em;
-          border-radius: 4px;
-          text-align: left;
-          background: #fff;
-        ">
-          <h2 style="margin-top: 0;">
-            <a href="/blog/post2/" style="color: #800000; text-decoration: none;">
-              Charity Event Recap
-            </a>
-          </h2>
-          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
-            Feb 15, 2025
-          </p>
-          <p style="margin: 0 0 0.5em;">
-            
-<h2>Charity Event Recap</h2>
-<p>A summary of our latest charity event goes here.</p>
-
-          </p>
-          <a href="/blog/post2/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
-        </li>
-      
-        <li style="
-          flex: 0 1 calc(33.33% - 1em);
-          border: 1px solid #ddd;
-          padding: 1em;
-          border-radius: 4px;
-          text-align: left;
-          background: #fff;
-        ">
-          <h2 style="margin-top: 0;">
-            <a href="/blog/post1/" style="color: #800000; text-decoration: none;">
-              First Blog Post
-            </a>
-          </h2>
-          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
-            Jan 01, 2025
-          </p>
-          <p style="margin: 0 0 0.5em;">
-            
-<article class="post-detail" style="padding: 2em; max-width: 800px; margin: 0 auto;">
-  <h1>First Blog Post</h1>
-  <p style="color: #666;">Published ...
-          </p>
-          <a href="/blog/post1/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
-        </li>
-      
-    </ul>
+    </div>
     
+    
+      <nav class="pagination" style="margin-top: 2em;">
+        
+          
+        
+          
+        
+      </nav>
     
     
   
 </section>
 
-    </main>
+  </main>
 
-    <footer>
-       <p>&copy; 2025 Caritas Seychelles.</p>
-    </footer>
-    <script src="/js/main.js"></script>
+  <footer class="site-footer">
+  <p>&copy; 2025 Caritas Seychelles</p>
+</footer>
+
+  <script src="/js/main.js"></script>
 </body>
 </html>

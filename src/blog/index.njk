@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-title: "Blog"
+title: "Our Blog"
 pagination:
   data: collections.blog
   size: 6
@@ -11,26 +11,12 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
 <section class="blog" style="padding: 2em; text-align: center;">
   <h1>Our Blog</h1>
   {% if pagination.items | length %}
-    <ul style="
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1em;
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      max-width: 1200px;
-    ">
+    <!-- Use blog-cards as container -->
+    <div class="blog-cards">
       {% for post in pagination.items %}
-        <li style="
-          flex: 0 1 calc(33.33% - 1em);
-          border: 1px solid #ddd;
-          padding: 1em;
-          border-radius: 4px;
-          text-align: left;
-          background: #fff;
-        ">
-          <h2 style="margin-top: 0;">
+        <!-- Each post card uses blog-card class -->
+        <div class="blog-card">
+          <h2>
             <a href="{{ post.url }}" style="color: #800000; text-decoration: none;">
               {{ post.data.title | default("Untitled Post") }}
             </a>
@@ -42,9 +28,9 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
             {{ post.data.excerpt | default(post.templateContent | safe | truncate(150, true)) }}
           </p>
           <a href="{{ post.url }}" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
-        </li>
+        </div>
       {% endfor %}
-    </ul>
+    </div>
     
     {% if pagination.pages.length > 1 %}
       <nav class="pagination" style="margin-top: 2em;">

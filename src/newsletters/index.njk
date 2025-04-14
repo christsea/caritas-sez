@@ -11,6 +11,7 @@ title: "Newsletters"
         <li style="margin-bottom: 1.5em; border-bottom: 1px solid #ddd; padding-bottom: 1em;">
           <h3 style="margin: 0;">{{ newsletter.data.title | default("Untitled Newsletter") }}</h3>
           <p style="color: #666; font-size: 0.9em;">{{ newsletter.date | date("LLL dd, yyyy") }}</p>
+          <p>{{ newsletter.data.excerpt | default("No excerpt provided.") }}</p>
           <a href="{{ newsletter.data.link }}" class="btn" style="display: inline-block; margin-top: 0.5em;">Download</a>
         </li>
       {% endfor %}
