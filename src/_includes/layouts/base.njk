@@ -3,35 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}{{ title | default(site.title) }}{% endblock %} | {{ site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap 5 CSS (no integrity to avoid mismatch errors) -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    crossorigin="anonymous">
+
+  <!-- Your custom CSS (overrides or additional styling) -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   {% include "partials/header.njk" %}
 
-  <!-- Breadcrumbs, if needed -->
-  <nav class="breadcrumbs" aria-label="Breadcrumb">
+  <!-- Breadcrumbs -->
+  <nav aria-label="breadcrumb" class="my-2">
     {% set crumbs = page.url | breadcrumbs %}
     {% if crumbs and crumbs.length > 0 %}
-      <ul>
-        {% for crumb in crumbs %}
-          <li>
+      <div class="container">
+        <ol class="breadcrumb">
+          {% for crumb in crumbs %}
             {% if loop.last %}
-              <span>{{ crumb.name }}</span>
+              <li class="breadcrumb-item active" aria-current="page">{{ crumb.name }}</li>
             {% else %}
-              <a href="{{ crumb.url }}">{{ crumb.name }}</a> &raquo;
+              <li class="breadcrumb-item">
+                <a href="{{ crumb.url }}">{{ crumb.name }}</a>
+              </li>
             {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+          {% endfor %}
+        </ol>
+      </div>
     {% endif %}
   </nav>
 
-  <main>
+  <!-- Main Content -->
+  <main class="container my-4">
     {{ content | safe }}
   </main>
 
   {% include "partials/footer.njk" %}
+
+  <!-- Bootstrap 5 JS Bundle (no integrity) -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+    crossorigin="anonymous">
+  </script>
+
+  <!-- (Optional) Your custom JS -->
   <script src="/js/main.js"></script>
 </body>
 </html>

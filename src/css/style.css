@@ -241,4 +241,8 @@ nav ul li a {
 .post-body p {
   margin: 1em 0;
 }
-/* Footer override already styled above */
+
+/* Custom burgundy background class */
+.bg-burgundy {
+  background-color: #800000 !important;
+}

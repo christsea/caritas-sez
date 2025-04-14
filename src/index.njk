@@ -3,112 +3,132 @@ layout: layouts/base.njk
 title: "Home"
 ---
 
-<!-- Hero Section (example remains unchanged) -->
-<section class="hero" style="background: url('/images/dummy-home-hero.jpg') no-repeat center center/cover; padding-top: 35vh; padding-bottom: 4em; padding-left: 2em; padding-right: 2em; text-align: center;">
-  <div class="hero-content">
-    <h1>Welcome to Charity Organization</h1>
-    <p>Making a Difference, One Step at a Time</p>
-    <a href="/about/" class="btn">Learn More</a>
+{% block content %}
+<!-- Hero Section -->
+<section class="text-white" style="background: url('/images/dummy-home-hero.jpg') no-repeat center center/cover; padding: 35% 0 4em 0;">
+  <div class="container text-center py-5">
+    <h1 class="display-4">Welcome to Caritas Seychelles</h1>
+    <p class="lead">Making a Difference, One Step at a Time</p>
+    <a href="/about/" class="btn btn-primary">Learn More</a>
   </div>
 </section>
 
-<!-- Mission Statement -->
-<section class="mission" style="padding: 2em; text-align: center;">
-  <h2>Our Mission</h2>
-  <p>We aim to empower communities by providing education, resources, and support.</p>
+<!-- Mission Section -->
+<section class="mission py-5">
+  <div class="container text-center">
+    <h2>Our Mission</h2>
+    <p>We aim to empower communities by providing education, resources, and support.</p>
+  </div>
 </section>
 
 <!-- What We Do Section -->
-<section class="what-we-do" style="padding: 2em; text-align: center; background-color: #f2f2f2;">
-  <h2>What We Do</h2>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2em; margin-top: 1em;">
-    <div class="what-we-do-content" style="max-width: 500px; text-align: left;">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec dui at metus commodo tincidunt. Nulla facilisi. Phasellus dignissim turpis eget nisi semper, id faucibus nulla congue.</p>
-      <a href="/about/" class="btn">Learn More</a>
-    </div>
-    <div class="what-we-do-image" style="max-width: 500px;">
-      <img src="/images/dummy-what-we-do.jpg" alt="What We Do" style="width: 100%; height: auto; border-radius: 4px;">
-    </div>
-  </div>
-</section>
-
-<!-- Featured Stories Section with New Categories -->
-<section class="features" style="padding: 2em; background-color: #f8f8f8; text-align: center;">
-  <h2 style="text-align: center;">Featured Stories</h2>
-  <div class="feature-cards" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2em; margin-top: 1em;">
-    
-    <!-- Feature Card 1: Community Outreach -->
-    <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
-      <img src="/images/dummy-community-outreach.jpg" alt="Community Outreach" style="width: 100%; height: auto;">
-      <div style="padding: 1em;">
-        <h3 style="margin: 0;">Community Outreach</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <a href="/blog/community-outreach/" class="btn" style="display: inline-block; margin-top: 0.5em;">Discover More</a>
-      </div>
-    </div>
-    
-    <!-- Feature Card 2: Impact Stories -->
-    <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
-      <img src="/images/dummy-impact-stories.jpg" alt="Impact Stories" style="width: 100%; height: auto;">
-      <div style="padding: 1em;">
-        <h3 style="margin: 0;">Impact Stories</h3>
-        <p> 
-          During the time of disaster, Caritas Seychelles extended its services to the communities.  Some members were engaged at the Centre helping in the sorting and distribution of necessities to the people. Several members from parishes groups visited the families affected at their homes.  Some 35 families were visited and assisted in various forms.
+<section class="what-we-do py-5" style="background-color: #f2f2f2;">
+  <div class="container text-center">
+    <h2>What We Do</h2>
+    <div class="row align-items-center mt-4">
+      <div class="col-md-6 text-md-start">
+        <p>
+          Over the years, Caritas Seychelles has expanded its scope of activities to include a variety of humanitarian and social services from assisting individuals and families who are struggling to meet their basic needs with food and clothing to providing educational activities to providing financial assistance to individuals going abroad for medical treatment not available in the country.
         </p>
-        <a href="/blog/impact-stories/" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
+        <p>
+          Caritas Seychelles has also expanded its activities to include the provision of academic skills to young people in order to empower them to obtain a better job prospect. 
+        </p>
+        <a href="/about/" class="btn btn-secondary mt-3">Learn More</a>
+      </div>
+      <div class="col-md-6">
+        <img src="/images/dummy-what-we-do.jpg" alt="What We Do" class="img-fluid rounded">
       </div>
     </div>
-    
-    <!-- Feature Card 3: Volunteer Program -->
-    <div class="feature-card" style="flex: 1 1 300px; max-width: 320px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
-      <img src="/images/dummy-volunteer-program.jpg" alt="Volunteer Program" style="width: 100%; height: auto;">
-      <div style="padding: 1em;">
-        <h3 style="margin: 0;">Volunteer Program</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <a href="/blog/volunteer-program/" class="btn" style="display: inline-block; margin-top: 0.5em;">Join Us</a>
-      </div>
-    </div>
-    
   </div>
 </section>
 
-<!-- Latest News -->
+<!-- Featured Stories Section -->
+<section class="py-5" style="background-color: #f8f8f8;">
+  <div class="container text-center">
+    <h2 class="mb-4">Featured Stories</h2>
+    <div class="row g-4">
+      <!-- Card 1: Community Outreach -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="/images/dummy-community-outreach.jpg" class="card-img-top" alt="Community Outreach">
+          <div class="card-body">
+            <h5 class="card-title">Community Outreach</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="/blog/community-outreach/" class="btn btn-outline-primary">Discover More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2: Impact Stories -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="/images/dummy-impact-stories.jpg" class="card-img-top" alt="Impact Stories">
+          <div class="card-body">
+            <h5 class="card-title">Impact Stories</h5>
+            <p class="card-text">
+              During disaster times, our team extended services to the affected communities...
+            </p>
+            <a href="/blog/impact-stories/" class="btn btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3: Volunteer Program -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="/images/dummy-volunteer-program.jpg" class="card-img-top" alt="Volunteer Program">
+          <div class="card-body">
+            <h5 class="card-title">Volunteer Program</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="/blog/volunteer-program/" class="btn btn-outline-primary">Join Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Latest News Section -->
 {% set _allBlogPosts = collections.blog %}
 {% set latestPosts = _allBlogPosts.slice(0, 3) %}
-
-<section class="news" style="padding: 2em; text-align: center;">
-  <h2>Latest News</h2>
-  {% if latestPosts | length %}
-    <!-- Use the class news-cards on the container -->
-    <div class="news-cards">
-      {% for post in latestPosts %}
-        <!-- Use class news-card on individual items -->
-        <div class="news-card">
-          <h3>
-            <a href="{{ post.url }}" style="color: #800000; text-decoration: none; font-weight: bold;">
-              {{ post.data.title | default("Untitled Post") }}
-            </a>
-          </h3>
-          <p style="color: #666; font-size: 0.9em; margin: 0 0 0.5em;">
-            {{ post.date | date("LLL dd, yyyy") }}
-          </p>
-          <p style="margin: 0 0 0.5em;">
-            {{ post.data.excerpt | default(post.templateContent | safe | slice(0,150) ~ '...') }}
-          </p>
-          <a href="{{ post.url }}" class="btn" style="display: inline-block; margin-top: 0.5em;">Read More</a>
-        </div>
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No blog posts found.</p>
-  {% endif %}
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Latest News</h2>
+    {% if latestPosts | length %}
+      <div class="row g-4">
+        {% for post in latestPosts %}
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="{{ post.url }}" class="text-decoration-none text-primary">
+                    {{ post.data.title | default("Untitled Post") }}
+                  </a>
+                </h5>
+                <p class="card-subtitle mb-2 text-muted" style="font-size: 0.9em;">
+                  {{ post.date | date("LLL dd, yyyy") }}
+                </p>
+                <p class="card-text">
+                  {{ post.data.excerpt | default(post.templateContent | safe | slice(0,150) ~ '...') }}
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <a href="{{ post.url }}" class="btn btn-sm btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No blog posts found.</p>
+    {% endif %}
+  </div>
 </section>
-
 
 <!-- Contact Prompt Section -->
-<section class="contact-prompt" style="padding: 2em; background-color: #eee; text-align: center;">
-  <h2>Get In Touch</h2>
-  <p>If you want to learn more, please contact us!</p>
-  <a href="/contact/" class="btn">Contact Us</a>
+<section class="py-5" style="background-color: #eee;">
+  <div class="container text-center">
+    <h2>Get In Touch</h2>
+    <p>If you want to learn more, please contact us!</p>
+    <a href="/contact/" class="btn btn-primary">Contact Us</a>
+  </div>
 </section>
+{% endblock %}
