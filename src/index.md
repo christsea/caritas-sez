@@ -4,6 +4,7 @@ title: "Home"
 ---
 
 {% block content %}
+
 <!-- Hero Section -->
 <section class="text-white" style="background: url('/images/home-hero.jpg') no-repeat center center/cover; padding: 35% 0 4em 0;">
   <div class="container text-center py-5">
@@ -61,7 +62,7 @@ title: "Home"
       <!-- Card 2: Impact Stories -->
       <div class="col-md-4">
         <div class="card h-100">
-          <img src="/images/dummy-impact-stories.jpg" class="card-img-top" alt="Impact Stories">
+          <img src="/images/response-award.jpg" class="card-img-top" alt="Impact Stories">
           <div class="card-body">
             <h5 class="card-title">Impact Stories</h5>
             <p class="card-text">
@@ -87,8 +88,10 @@ title: "Home"
 </section>
 
 <!-- Latest News Section -->
+
 {% set _allBlogPosts = collections.blog %}
 {% set latestPosts = _allBlogPosts.slice(0, 3) %}
+
 <section class="py-5">
   <div class="container text-center">
     <h2 class="mb-4">Latest News</h2>
