@@ -73,6 +73,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
 
   return {
+    // Tell Eleventy to use Nunjucks for all template file types, including Markdown:
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
     dir: {
       input: "src", // Content source folder
       includes: "_includes", // Location for includes/layouts
