@@ -2,7 +2,7 @@ local_backend: true
 site_url: "http://localhost:8080"
 backend:
   name: git-gateway
-  branch: main
+  branch: master
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
