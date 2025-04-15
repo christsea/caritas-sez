@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/base.njk
 title: "Volunteer Program Post 1"
 date: 2025-05-05
 tags: ["volunteer-program"]

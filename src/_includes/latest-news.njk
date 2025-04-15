@@ -1,0 +1,36 @@
+{% set _allBlogPosts = collections.blog %}
+{% set latestPosts = _allBlogPosts.slice(0, 3) %}
+
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Latest News</h2>
+    {% if latestPosts | length %}
+      <div class="row g-4">
+        {% for post in latestPosts %}
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="{{ post.url }}" class="text-decoration-none text-primary">
+                    {{ post.data.title | default("Untitled Post") }}
+                  </a>
+                </h5>
+                <p class="card-subtitle mb-2 text-muted" style="font-size: 0.9em;">
+                  {{ post.date | date("LLL dd, yyyy") }}
+                </p>
+                <p class="card-text">
+                  {{ post.data.excerpt | default(post.templateContent | safe | slice(0,150) ~ '...') }}
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <a href="{{ post.url }}" class="btn btn-sm btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-center">No blog posts found.</p>
+    {% endif %}
+  </div>
+</section>

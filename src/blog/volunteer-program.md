@@ -1,6 +1,9 @@
 ---
 layout: layouts/base.njk
 title: "Volunteer Program"
+date: 2025-05-06
+tags: ["volunteer-program"]
+excerpt: "Responding to the cause."
 ---
 
 <section class="blog-category" style="padding: 2em; text-align: center;">
