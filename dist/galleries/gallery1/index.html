@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gallery: Community Event | Caritas Seychelles</title>
+  <title>Community Event Gallery | Caritas Seychelles</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Bootstrap 5 CSS (no integrity to avoid mismatch errors) -->
@@ -10,6 +10,11 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
     rel="stylesheet" 
     crossorigin="anonymous">
+    <!-- LightGallery CSS (free build) -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/lightgallery@2.1.8/css/lightgallery.min.css"
+/>
 
   <!-- Your custom CSS (overrides or additional styling) -->
   <link rel="stylesheet" href="/css/style.css">
@@ -69,19 +74,66 @@
   <!-- Main Content -->
   <main class="container my-4">
     
-<section class="gallery-detail" style="padding: 2em; max-width: 1200px; margin: 0 auto; text-align: center;">
-  <h1>Gallery: Community Event</h1>
-  <div id="lightgallery" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: center;">
-    
-      <!-- If no images are found in front matter, show fallback images. -->
-      <p>No images available for this gallery.</p>
-    
+<section class="gallery-detail py-5">
+  <div class="container text-center">
+    <h1 class="mb-4">Community Event Gallery</h1>
+    <div id="lightgallery" class="row g-3 justify-content-center">
+      
+        
+          <div class="col-md-3">
+            <a href="/images/uploads/community-event1.jpg" class="d-block">
+              <img src="/images/uploads/community-event1.jpg" alt="Community Event Gallery Image" class="img-fluid rounded">
+            </a>
+          </div>
+        
+          <div class="col-md-3">
+            <a href="/images/uploads/community-event2.jpg" class="d-block">
+              <img src="/images/uploads/community-event2.jpg" alt="Community Event Gallery Image" class="img-fluid rounded">
+            </a>
+          </div>
+        
+          <div class="col-md-3">
+            <a href="/images/uploads/community-event3.jpg" class="d-block">
+              <img src="/images/uploads/community-event3.jpg" alt="Community Event Gallery Image" class="img-fluid rounded">
+            </a>
+          </div>
+        
+          <div class="col-md-3">
+            <a href="/images/uploads/community-event4.jpg" class="d-block">
+              <img src="/images/uploads/community-event4.jpg" alt="Community Event Gallery Image" class="img-fluid rounded">
+            </a>
+          </div>
+        
+          <div class="col-md-3">
+            <a href="/images/uploads/community-event5.jpg" class="d-block">
+              <img src="/images/uploads/community-event5.jpg" alt="Community Event Gallery Image" class="img-fluid rounded">
+            </a>
+          </div>
+        
+          <div class="col-md-3">
+            <a href="/images/uploads/community-event6.jpg" class="d-block">
+              <img src="/images/uploads/community-event6.jpg" alt="Community Event Gallery Image" class="img-fluid rounded">
+            </a>
+          </div>
+        
+          <div class="col-md-3">
+            <a href="/images/uploads/community-event7.jpg" class="d-block">
+              <img src="/images/uploads/community-event7.jpg" alt="Community Event Gallery Image" class="img-fluid rounded">
+            </a>
+          </div>
+        
+      
+    </div>
   </div>
 </section>
 
-<!-- LightGallery Styles and Script -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/css/lightgallery-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.3.0/lightgallery.umd.js"></script>
+<!-- LightGallery CSS and JS (Free Build) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const galleryElement = document.getElementById("lightgallery");
