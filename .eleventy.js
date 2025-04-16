@@ -74,7 +74,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/downloads");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/test.txt");
 
   // Sitemap plugin
   eleventyConfig.addPlugin(pluginSitemap, {
