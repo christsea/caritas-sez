@@ -90,5 +90,38 @@ values_text:     |
       </div>
     </div>
 
+    <!-- Meet our Team -->
+    {% if collections.team.length %}
+    <section class="py-5">
+      <div class="container">
+        <h2 class="mb-4 text-center">Meet Our Team</h2>
+
+        <div class="row g-4 justify-content-center">
+          {% for member in collections.team %}
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card h-100 text-center border-0">
+              {% if member.data.photo %}
+                <img
+                  src="{{ member.data.photo }}"
+                  alt="{{ member.data.name }}"
+                  class="card-img-top rounded-circle mx-auto mt-3"
+                  style="width:150px;height:150px;object-fit:cover;"
+                >
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title mb-1">{{ member.data.name }}</h5>
+                <p class="text-muted small mb-2">{{ member.data.position }}</p>
+                <div class="card-text small">
+                  {{ member.templateContent | safe }}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
   </div>
 </div>

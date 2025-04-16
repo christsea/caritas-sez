@@ -115,6 +115,22 @@
   
     
       <url>
+        <loc>https://caritas-sez.netlify.app/team/john-doe/</loc>
+        <lastmod>2025-04-16T22:22:05.965Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://caritas-sez.netlify.app/team/jane-doe/</loc>
+        <lastmod>2025-04-16T22:30:03.224Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
         <loc>https://caritas-sez.netlify.app/blog/impact-stories-2/</loc>
         <lastmod>2025-04-26T00:00:00.000Z</lastmod>
         <changefreq>monthly</changefreq>

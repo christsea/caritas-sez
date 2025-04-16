@@ -67,6 +67,12 @@ module.exports = function (eleventyConfig) {
     return breadcrumbs;
   });
 
+  eleventyConfig.addCollection("team", (api) => {
+    return api
+      .getFilteredByGlob("src/team/*.{md,njk}")
+      .sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
+  });
+
   // Passthrough copy for static assets
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
