@@ -11,7 +11,6 @@ collections:
     label: "Pages"
     files:
       # Home page (Nunjucks template)
-      # Home page (Nunjucks template)
       - label: "Home Page"
         name: "home"
         file: "src/index.njk"
@@ -70,10 +69,10 @@ collections:
 
       - label: "About Page"
         name: "about"
-        file: "src/about.md"
+        file: "src/about.njk"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Body", name: "body", widget: "string" }
 
   - name: "blog"
     label: "Blog"

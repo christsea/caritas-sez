@@ -1,4 +1,8 @@
 {
   "title": "Caritas Seychelles",
-  "description": "Making a difference in the community."
+  "description": "Empowering communities across Seychelles through education, resources, and support.",
+  "url": "https://your-site.netlify.app",
+  "author": "Caritas Seychelles",
+  "twitterHandle": "@CaritasSey",
+  "defaultImage": "/images/seo-default.jpg"
 }

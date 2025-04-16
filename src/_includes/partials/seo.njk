@@ -1,0 +1,58 @@
+{# Compute metaTitle: use page.title if available, else site.title #}
+{% if page.title %}
+  {% set metaTitle = page.title ~ " | " ~ site.title %}
+{% else %}
+  {% set metaTitle = site.title %}
+{% endif %}
+
+{# Compute metaDescription: use page.data.description if available, else site.description #}
+{% if page.data.description %}
+  {% set metaDescription = page.data.description %}
+{% else %}
+  {% set metaDescription = site.description %}
+{% endif %}
+
+{# Build metaUrl by concatenating site.url with page.url #}
+{% set metaUrl = site.url ~ page.url %}
+
+{# Determine metaImage: if page.data.image exists use it, otherwise fall back to site.defaultImage #}
+{% if page.data.image %}
+  {% set metaImage = site.url ~ page.data.image %}
+{% else %}
+  {% set metaImage = site.url ~ site.defaultImage %}
+{% endif %}
+
+{# Use the site.twitterHandle for metaTwitter #}
+{% set metaTwitter = site.twitterHandle %}
+
+<title>{{ metaTitle }}</title>
+<meta name="description" content="{{ metaDescription }}">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="{{ metaTitle }}">
+<meta property="og:description" content="{{ metaDescription }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ metaUrl }}">
+<meta property="og:image" content="{{ metaImage }}">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{ metaTwitter }}">
+<meta name="twitter:title" content="{{ metaTitle }}">
+<meta name="twitter:description" content="{{ metaDescription }}">
+<meta name="twitter:image" content="{{ metaImage }}">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/CaritasSeychelles",
+    "https://twitter.com/CaritasSey"
+  ]
+}
+</script>
