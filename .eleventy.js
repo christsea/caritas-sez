@@ -1,6 +1,6 @@
 const { DateTime } = require("luxon");
 
-const pluginSitemap = require("eleventy-plugin-sitemap");
+//const pluginSitemap = require("@11ty/eleventy-plugin-sitemap");
 
 module.exports = function (eleventyConfig) {
   // Date filters for formatting dates in templates
@@ -76,11 +76,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   // Sitemap plugin
-  eleventyConfig.addPlugin(pluginSitemap, {
-    sitemap: {
-      hostname: "https://caritas-sez.netlify.app", // ← your production URL
-    },
-  });
+  // eleventyConfig.addPlugin(pluginSitemap, {
+  //   sitemap: {
+  //     hostname: "https://caritas-sez.netlify.app", // ← your production URL
+  //   },
+  // });
 
   return {
     // Tell Eleventy to use Nunjucks for all template file types, including Markdown:
