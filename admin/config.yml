@@ -1,79 +1,94 @@
-local_backend: true
-site_url: "http://localhost:8080"
 backend:
-  name: git-gateway
+  # Use netlify identity as backend
+  name: git-gateway # or "github" / "gitlab" 
   branch: master
-media_folder: "src/images/uploads"
-public_folder: "/images/uploads"
 
+media_folder: "src/images" # where uploads are stored in the repo
+public_folder: "/images" # how the site references those images
+
+# Run "npx netlify-cms-proxy-server" for local backend
+local_backend: true # <— for local development
+
+# ───────────────────────────────────────────────────────────────
 collections:
+  # ── Static single‑file pages ─────────────────────────────────
   - name: "pages"
     label: "Pages"
     files:
-      # Home page (Nunjucks template)
       - label: "Home Page"
         name: "home"
         file: "src/index.njk"
         fields:
-          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
           - {
               label: "Hero Heading",
               name: "hero_heading",
               widget: "string",
-              required: false,
+              required: false
             }
           - {
-              label: "Hero Subheading",
+              label: "Hero Sub‑text",
               name: "hero_subheading",
               widget: "string",
-              required: false,
+              required: false
             }
           - {
-              label: "Mission Heading",
-              name: "mission_heading",
-              widget: "string",
-              required: false,
-            }
-          - {
-              label: "Mission Body",
+              label: "Mission Text",
               name: "mission_body",
               widget: "markdown",
-              required: false,
+              required: false
             }
           - {
-              label: "What We Do Heading",
-              name: "what_we_do_heading",
-              widget: "string",
-              required: false,
-            }
-          - {
-              label: "What We Do Body",
+              label: "What-We-Do Text",
               name: "what_we_do_body",
               widget: "markdown",
-              required: false,
-            }
-          - {
-              label: "Contact Prompt",
-              name: "contact_prompt",
-              widget: "markdown",
-              required: false,
+              required: false
             }
 
-      # Contact page (Markdown)
+      - label: "About Page"
+        name: "about"
+        file: "src/pages/about.njk"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Story Heading",
+              name: "story_heading",
+              widget: "string",
+              required: false
+            }
+          - {
+              label: "Our Story",
+              name: "story_body",
+              widget: "markdown",
+              required: false
+            }
+          - {
+              label: "Vision Text",
+              name: "vision_text",
+              widget: "markdown",
+              required: false
+            }
+          - {
+              label: "Mission Text",
+              name: "mission_text",
+              widget: "markdown",
+              required: false
+            }
+          - {
+              label: "Values Text",
+              name: "values_text",
+              widget: "markdown",
+              required: false
+            }
+
       - label: "Contact Page"
         name: "contact"
-        file: "src/contact.md"
+        file: "src/pages/contact.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - label: "About Page"
-        name: "about"
-        file: "src/about.njk"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "string" }
-
+  # ── Blog posts ───────────────────────────────────────────────
   - name: "blog"
     label: "Blog"
     folder: "src/blog"
@@ -81,32 +96,73 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "newsletters"
-    label: "Newsletters"
-    folder: "src/newsletters"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Download Link", name: "link", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: true
+        }
+      - {
+          label: "Cover Image",
+          name: "image",
+          widget: "image",
+          required: false
+        }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  # ── Galleries ────────────────────────────────────────────────
   - name: "galleries"
     label: "Galleries"
     folder: "src/galleries"
     create: true
+    extension: "md" # ← tell CMS the file type
+    # format: "frontmatter" # ← safest for njk + md blend
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - {
+          label: "Thumbnail",
+          name: "thumbnail",
+          widget: "image",
+          required: false
+        }
       - label: "Images"
         name: "images"
         widget: "list"
+        required: true
         fields:
           - { label: "Image", name: "image", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
+
+  # ── Newsletters (if used) ────────────────────────────────────
+  - name: "newsletters"
+    label: "Newsletters"
+    folder: "src/newsletters"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "PDF", name: "file", widget: "file" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # ── ★ NEW ★ Team Members ────────────────────────────────────
+  - name: "team"
+    label: "Team Members"
+    folder: "src/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - {
+          label: "Order",
+          name: "order",
+          widget: "number",
+          value_type: "int",
+          required: false
+        }
+      - { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Bio", name: "body", widget: "markdown" }

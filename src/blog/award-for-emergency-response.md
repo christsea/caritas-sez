@@ -2,12 +2,11 @@
 layout: layouts/post.njk
 title: Award for Emergency Response
 date: 2025-04-14
-tags:
-  - impact-stories
-excerpt: During the night of 7th December 2024, Seychelles was shaken by an
-  explosion of dynamite at a construction quarry in the east of the island of
-  Mahe.
+description: "Award for fast response in emergency."
+image: "/images/blog/response-award.jpg"
+tags: ["impact-stories"]
 ---
+
 <p>
   **During the night of 7th December 2024, Seychelles was shaken by an explosion of dynamite at a construction quarry in the east of the island of Mahe**. Over hundred houses were damaged, some completely destroyed.  Thanks to God amongst the casualties there were no lost of lives, although some victims suffered injuries, some seriously.
 </p>

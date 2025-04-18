@@ -33,7 +33,7 @@
 <meta property="og:title" content="Caritas Seychelles">
 <meta property="og:description" content="Empowering communities across Seychelles through education, resources, and support.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://caritas-sez.netlify.app/galleries/">
+<meta property="og:url" content="https://caritas-sez.netlify.app/galleries/group-photo/">
 <meta property="og:image" content="https://caritas-sez.netlify.app/images/seo-default.jpg">
 
 <!-- Twitter Card Meta Tags -->
@@ -111,7 +111,13 @@
             
           
             
-              <li class="breadcrumb-item active" aria-current="page">Galleries</li>
+              <li class="breadcrumb-item">
+                <a href="/galleries/">Galleries</a>
+              </li>
+            
+          
+            
+              <li class="breadcrumb-item active" aria-current="page">Group photo</li>
             
           
         </ol>
@@ -121,40 +127,47 @@
 
   <!-- Main Content -->
   <main class="container my-4">
-    <section class="galleries py-5">
+    <section class="gallery-detail py-5">
   <div class="container text-center">
-    <h1 class="mb-4">Photo Galleries</h1>
-<p><div class="row g-3"></p>
-<p><div class="col-md-4">
-<div class="card h-100"></p>
-<p><img src="/images/uploads/community-event-thumb.jpg" class="card-img-top" alt="Community Event Gallery"></p>
-<p><div class="card-body text-center">
-<h5 class="card-title">Community Event Gallery</h5>
-<a href="/galleries/community-event/" class="btn btn-outline-primary mt-2">View Gallery</a>
-</div>
-</div>
+    <h1 class="mb-4">Groups Photos</h1>
+    <div id="lightgallery" class="row g-3 justify-content-center">
+<p><div class="col-md-3">
+<a href="/images/uploads/group-photo1.jpg" class="d-block">
+<img src="/images/uploads/group-photo1.jpg" alt="Groups Photos Image" class="img-fluid rounded">
+</a>
 </div></p>
-<p><div class="col-md-4">
-<div class="card h-100"></p>
-<p><div class="card-img-top bg-secondary text-white p-3">No Thumbnail</div></p>
-<p><div class="card-body text-center">
-<h5 class="card-title">Galleries</h5>
-<a href="/galleries/" class="btn btn-outline-primary mt-2">View Gallery</a>
-</div>
-</div>
+<p><div class="col-md-3">
+<a href="/images/uploads/group-photo2.jpg" class="d-block">
+<img src="/images/uploads/group-photo2.jpg" alt="Groups Photos Image" class="img-fluid rounded">
+</a>
 </div></p>
-<p><div class="col-md-4">
-<div class="card h-100"></p>
-<p><img src="/images/uploads/group-photo-thumb.jpg" class="card-img-top" alt="Groups Photos"></p>
-<p><div class="card-body text-center">
-<h5 class="card-title">Groups Photos</h5>
-<a href="/galleries/group-photo/" class="btn btn-outline-primary mt-2">View Gallery</a>
-</div>
-</div>
+<p><div class="col-md-3">
+<a href="/images/uploads/group-photo3.jpg" class="d-block">
+<img src="/images/uploads/group-photo3.jpg" alt="Groups Photos Image" class="img-fluid rounded">
+</a>
+</div></p>
+<p><div class="col-md-3">
+<a href="/images/uploads/group-photo4.jpg" class="d-block">
+<img src="/images/uploads/group-photo4.jpg" alt="Groups Photos Image" class="img-fluid rounded">
+</a>
 </div></p>
 <p></div></p>
   </div>
 </section>
+<!-- LightGallery CSS and JS (Free Build) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const galleryElement = document.getElementById("lightgallery");
+    if (galleryElement) {
+      lightGallery(galleryElement, { selector: 'a' });
+    }
+  });
+</script>
 
   </main>
 

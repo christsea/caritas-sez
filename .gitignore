@@ -27,3 +27,6 @@ yarn-error.log*
 
 # Optional: Coverage directory if running tests
 coverage/
+
+# Local Netlify folder
+.netlify
