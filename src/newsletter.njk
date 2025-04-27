@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+title: "Newsletters"
+permalink: "/newsletters/"
+---
+
+<h1>{{ title }}</h1>
+
+{# 1) Bind the newsletters collection to a local variable #}
+{% set allNewsletters = collections.newsletters %}
+
+{# 2) Include the shared list-posts partial #}
+{% include "partials/list-posts.njk" %}

@@ -1,0 +1,20 @@
+<article class="container py-5 text-center">
+  <h1>{{ title }}</h1>
+  {% if thumbnail %}
+    <img src="{{ thumbnail }}" alt="Thumbnail" class="img-fluid my-3 rounded">
+  {% endif %}
+  <div class="row g-3 gallery-grid">
+    {% for item in images %}
+      <div class="col-md-3">
+        <a href="{{ item.image }}" target="_blank">
+          <img src="{{ item.image }}" class="img-fluid rounded" alt="Gallery image">
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  {% if content %}
+    <section class="gallery-description mt-4">
+      {{ content | safe }}
+    </section>
+  {% endif %}
+</article>

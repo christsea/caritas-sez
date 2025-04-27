@@ -1,0 +1,15 @@
+---
+# no front-matter needed here—it's a layout
+---
+<article class="container py-5">
+  <header>
+    <h1>{{ title }}</h1>
+    <time datetime="{{ date }}">{{ date | readableDate }}</time>
+  </header>
+  {% if image %}
+    <img src="{{ image }}" alt="{{ title }}" class="img-fluid my-4">
+  {% endif %}
+  <section class="post-body">
+    {{ content | safe }}
+  </section>
+</article>

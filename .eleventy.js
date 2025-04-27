@@ -1,103 +1,104 @@
-const { DateTime } = require("luxon");
-
-//const pluginSitemap = require("@11ty/eleventy-plugin-sitemap");
+const { DateTime } = require("luxon")
+const striptags = require("striptags")
+const slugify = require("slugify")
 
 module.exports = function (eleventyConfig) {
-  // Date filters for formatting dates in templates
-  eleventyConfig.addFilter("date", function (dateObj, format = "yyyy") {
-    return DateTime.fromJSDate(new Date(dateObj)).toFormat(format);
-  });
-  eleventyConfig.addFilter("readableDate", function (dateObj) {
-    return DateTime.fromJSDate(new Date(dateObj)).toFormat("dd LLL yyyy");
-  });
+  /* ─── Filters ─────────────────────────────────────────────────── */
+  eleventyConfig.addFilter("date", (dateObj, format = "yyyy") =>
+    DateTime.fromJSDate(new Date(dateObj)).toFormat(format)
+  )
+  eleventyConfig.addFilter("readableDate", (dateObj) =>
+    DateTime.fromJSDate(new Date(dateObj)).toFormat("dd LLL yyyy")
+  )
+  eleventyConfig.addFilter("where", (array = [], prop, val) =>
+    array.filter((item) => {
+      let v = prop.split(".").reduce((o, k) => (o ? o[k] : undefined), item)
+      return v === val
+    })
+  )
+  eleventyConfig.addFilter("byTag", (col, tag) =>
+    col.filter((p) => p.data.tags && p.data.tags.includes(tag))
+  )
+  // URL-safe slug for tags
+  eleventyConfig.addFilter("slug", (tag) =>
+    slugify(tag, { lower: true, strict: true })
+  )
 
-  // Custom filter to get posts by tag
-  eleventyConfig.addFilter("byTag", function (collection, tag) {
-    return collection.filter(
-      (post) => post.data.tags && post.data.tags.includes(tag)
-    );
-  });
+  eleventyConfig.addFilter("striptags", (str) => striptags(str))
+  eleventyConfig.addFilter("truncate", (str = "", len = 160, end = "…") =>
+    str.length > len ? str.slice(0, len) + end : str
+  )
+  eleventyConfig.addFilter("breadcrumbs", (url) => {
+    if (!url || typeof url !== "string") return []
+    const clean = url.replace(/^\/|\/$/g, "")
+    if (!clean) return [{ name: "Home", url: "/" }]
+    return clean.split("/").reduce(
+      (acc, seg) => {
+        const prev = acc[acc.length - 1].url
+        const name = seg
+          .replace(/-/g, " ")
+          .replace(/^./, (c) => c.toUpperCase())
+        acc.push({ name, url: `${prev}${seg}/` })
+        return acc
+      },
+      [{ name: "Home", url: "/" }]
+    )
+  })
 
-  eleventyConfig.addFilter("byTag", function (collection, tag) {
-    return collection.filter(function (post) {
-      return post.data.tags && post.data.tags.indexOf(tag) > -1;
-    });
-  });
+  /* ─── Collections ─────────────────────────────────────────────── */
+  eleventyConfig.addCollection("tagList", (api) => {
+    const tags = new Set()
+    api
+      .getFilteredByGlob("src/blog/*.md")
+      .forEach((post) => (post.data.tags || []).forEach((t) => tags.add(t)))
+    return [...tags]
+  })
+  eleventyConfig.addCollection("categoryList", (api) => {
+    const cats = new Set()
+    api
+      .getFilteredByGlob("src/blog/*.md")
+      .forEach((post) =>
+        (post.data.categories || []).forEach((c) => cats.add(c))
+      )
+    return [...cats]
+  })
+  eleventyConfig.addCollection("blog", (api) =>
+    api.getFilteredByGlob("src/blog/*.md").reverse()
+  )
+  eleventyConfig.addCollection("newsletters", (api) =>
+    api.getFilteredByGlob("src/newsletters/*.md").reverse()
+  )
+  eleventyConfig.addCollection("galleries", (api) =>
+    api.getFilteredByGlob("src/galleries/*.md")
+  )
+  // Create 'team' collection
+  eleventyConfig.addCollection("team", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/team/*.md")
+  })
+  eleventyConfig.addFilter("sortByOrder", function (collection) {
+    if (!collection) return []
+    return collection.sort((a, b) => {
+      return (a.data.order || 999) - (b.data.order || 999)
+    })
+  })
 
-  // Define a blog collection (adjust the glob as needed)
-  eleventyConfig.addCollection("blog", function (collectionApi) {
-    // Exclude the index listing file if needed:
-    return collectionApi
-      .getFilteredByGlob("src/blog/!(*index*).{md,njk}")
-      .reverse();
-  });
+  /* ─── Passthrough Copy ────────────────────────────────────────── */
+  eleventyConfig.addPassthroughCopy("src/css")
+  eleventyConfig.addPassthroughCopy("src/js")
+  eleventyConfig.addPassthroughCopy("src/images")
+  eleventyConfig.addPassthroughCopy("src/downloads")
+  eleventyConfig.addPassthroughCopy("src/admin") // <-- ensure CMS assets
+  eleventyConfig.addPassthroughCopy("src/robots.txt")
 
-  // Explicit collection for newsletters (if needed)
-  eleventyConfig.addCollection("newsletters", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/newsletters/*.{md,njk}");
-  });
-
-  eleventyConfig.addCollection("galleries", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/galleries/*.{md,njk}");
-  });
-
-  // Breadcrumbs filter
-  eleventyConfig.addFilter("breadcrumbs", function (url) {
-    // Ensure we have a string URL, otherwise return an empty array
-    if (!url || typeof url !== "string") {
-      return [];
-    }
-    // Remove leading and trailing slashes for uniformity
-    let cleanUrl = url.replace(/^\/|\/$/g, "");
-    // If the cleaned URL is empty, return just Home
-    if (cleanUrl === "") {
-      return [{ name: "Home", url: "/" }];
-    }
-    let segments = cleanUrl.split("/");
-    let breadcrumbs = [{ name: "Home", url: "/" }];
-    let path = "";
-    segments.forEach((segment) => {
-      // Build up the URL path
-      path += "/" + segment;
-      // Convert slug to a more human-friendly name:
-      let name = segment.replace(/-/g, " ");
-      name = name.charAt(0).toUpperCase() + name.slice(1);
-      breadcrumbs.push({ name: name, url: path + "/" });
-    });
-    return breadcrumbs;
-  });
-
-  eleventyConfig.addCollection("team", (api) => {
-    return api
-      .getFilteredByGlob("src/team/*.{md,njk}")
-      .sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
-  });
-
-  // Passthrough copy for static assets
-  eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/js");
-  eleventyConfig.addPassthroughCopy("src/images");
-  eleventyConfig.addPassthroughCopy("src/downloads");
-  eleventyConfig.addPassthroughCopy("admin");
-  eleventyConfig.addPassthroughCopy("src/robots.txt");
-
-  // Sitemap plugin
-  // eleventyConfig.addPlugin(pluginSitemap, {
-  //   sitemap: {
-  //     hostname: "https://caritas-sez.netlify.app", // ← your production URL
-  //   },
-  // });
-
+  /* ─── Eleventy Config ────────────────────────────────────────── */
   return {
-    // Tell Eleventy to use Nunjucks for all template file types, including Markdown:
+    dir: {
+      input: "src",
+      includes: "_includes",
+      output: "dist"
+    },
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk",
-    dir: {
-      input: "src", // Content source folder
-      includes: "_includes", // Location for includes/layouts
-      output: "dist",
-    },
-    dataTemplateEngine: "njk",
-  };
-};
+    dataTemplateEngine: "njk"
+  }
+}

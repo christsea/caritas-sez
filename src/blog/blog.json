@@ -1,0 +1,7 @@
+{
+  "layout": "layouts/post.njk",
+  "tags": ["blog"],
+  "featured": false,
+  "author": "Caritas Team",
+  "image": "/images/blog/default-image.jpg"
+}

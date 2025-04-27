@@ -3,7 +3,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/events/event1/</loc>
+        <loc>/events/event1/</loc>
         <lastmod>2025-01-10T00:00:00.000Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -11,7 +11,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/newsletters/newsletter1/</loc>
+        <loc>/newsletters/newsletter1/</loc>
         <lastmod>2025-01-15T00:00:00.000Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -19,7 +19,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/events/event2/</loc>
+        <loc>/events/event2/</loc>
         <lastmod>2025-03-10T00:00:00.000Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -27,7 +27,15 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/about/</loc>
+        <loc>/admin/</loc>
+        <lastmod>2025-04-13T10:46:04.016Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/about/</loc>
         <lastmod>2025-04-13T10:46:14.757Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -35,7 +43,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/contact/</loc>
+        <loc>/contact/</loc>
         <lastmod>2025-04-13T10:46:14.760Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -43,7 +51,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/</loc>
+        <loc>/</loc>
         <lastmod>2025-04-13T10:46:14.762Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -51,7 +59,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/events/</loc>
+        <loc>/events/</loc>
         <lastmod>2025-04-13T10:46:14.773Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -59,15 +67,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/blog/</loc>
-        <lastmod>2025-04-13T10:46:14.780Z</lastmod>
-        <changefreq>monthly</changefreq>
-      </url>
-    
-  
-    
-      <url>
-        <loc>https://caritas-sez.netlify.app/galleries/community-event/</loc>
+        <loc>/galleries/community-event/</loc>
         <lastmod>2025-04-13T10:46:14.813Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -75,7 +75,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/galleries/</loc>
+        <loc>/galleries/</loc>
         <lastmod>2025-04-13T10:46:14.815Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -83,7 +83,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/newsletters/</loc>
+        <loc>/newsletters/</loc>
         <lastmod>2025-04-13T10:46:14.870Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -91,15 +91,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/blog/award-for-emergency-response/</loc>
-        <lastmod>2025-04-14T00:00:00.000Z</lastmod>
-        <changefreq>monthly</changefreq>
-      </url>
-    
-  
-    
-      <url>
-        <loc>https://caritas-sez.netlify.app/galleries/group-photo/</loc>
+        <loc>/galleries/group-photo/</loc>
         <lastmod>2025-04-15T07:56:11.517Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -107,7 +99,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/team/john-doe/</loc>
+        <loc>/team/john-doe/</loc>
         <lastmod>2025-04-16T22:22:05.965Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -115,7 +107,7 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/team/jane-doe/</loc>
+        <loc>/team/jane-doe/</loc>
         <lastmod>2025-04-16T22:30:03.224Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -123,7 +115,71 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/blog/second-blog-post/</loc>
+        <loc>/newsletters/2025-04-26-my-new-newsletter/</loc>
+        <lastmod>2025-04-24T21:25:48.599Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/newsletters/2025-04-24-2025-04-25-our-special-newsletter/</loc>
+        <lastmod>2025-04-24T21:44:35.615Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/blog/caritas-seychelles/</loc>
+        <lastmod>2025-04-25T00:00:00.000Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/blog/beach-cleanup-2025/</loc>
+        <lastmod>2025-04-25T00:00:00.000Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/team/another.member/</loc>
+        <lastmod>2025-04-26T08:45:16.082Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/team/extra-ordinary-member/</loc>
+        <lastmod>2025-04-26T11:54:49.599Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/tags/</loc>
+        <lastmod>2025-04-26T21:34:26.300Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/tags/blog/</loc>
+        <lastmod>2025-04-26T21:35:19.517Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/blog/2025-05-05-volunteer-program/</loc>
         <lastmod>2025-05-05T00:00:00.000Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
@@ -131,16 +187,8 @@
   
     
       <url>
-        <loc>https://caritas-sez.netlify.app/blog/volunteer-program/</loc>
-        <lastmod>2025-05-05T00:00:00.000Z</lastmod>
-        <changefreq>monthly</changefreq>
-      </url>
-    
-  
-    
-      <url>
-        <loc>https://caritas-sez.netlify.app/blog/first-blog-post/</loc>
-        <lastmod>2025-05-08T00:00:00.000Z</lastmod>
+        <loc>/blog/2025-05-09-forth-blog/</loc>
+        <lastmod>2025-05-10T00:00:00.000Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
     

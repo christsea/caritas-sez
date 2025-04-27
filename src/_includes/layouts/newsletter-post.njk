@@ -1,0 +1,12 @@
+<article class="container py-5">
+  <header>
+    <h1>{{ title }}</h1>
+    <time datetime="{{ date }}">{{ date | readableDate }}</time>
+  </header>
+  {% if file %}
+    <p><a href="{{ file }}" class="btn btn-outline-primary">Download PDF</a></p>
+  {% endif %}
+  <section class="newsletter-body">
+    {{ content | safe }}
+  </section>
+</article>

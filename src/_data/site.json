@@ -1,8 +1,9 @@
 {
-  "title": "Caritas Seychelles",
-  "description": "Empowering communities across Seychelles through education, resources, and support.",
-  "url": "https://caritas-sez.netlify.app",
-  "author": "Caritas Seychelles",
-  "twitterHandle": "@CaritasSey",
-  "defaultImage": "/images/seo-default.jpg"
+  "address": {
+    "description": "Centre Diocesain, Ex-Petit Seminaire",
+    "street": "Le Chantier",
+    "city": "Mahe",
+    "country": "Seychelles",
+    "coords": [-4.628577, 55.455362]
+  }
 }
