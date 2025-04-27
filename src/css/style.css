@@ -17,6 +17,46 @@ body {
   text-align: center;
   padding: 1em;
 }
+.site-footer h5 {
+  color: #ffffff; /* Force white text */
+  margin-bottom: 1rem; /* Add spacing */
+}
+.site-footer address,
+.site-footer a {
+  color: #d4af37 !important; /* Gold for secondary text/links */
+}
+
+.site-footer a:hover {
+  color: #ffffff !important; /* White on hover */
+}
+/* Fix for footer headings */
+.bg-burgundy h5 {
+  color: #fff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure address text is visible */
+.bg-burgundy address {
+  color: #d4af37 !important; /* Gold color for address */
+}
+/* Color Variables */
+.text-gold {
+  color: #d4af37;
+}
+.hover\:text-white:hover {
+  color: #fff;
+}
+
+/* Footer Specific */
+/*
+.bg-burgundy {
+  background-color: #800020;
+}
+  */
+address {
+  font-style: normal;
+} /* Removes italic default */
 
 /* Hero Section - Home page*/
 .hero {
