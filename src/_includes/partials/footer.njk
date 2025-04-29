@@ -26,14 +26,16 @@
           {% if site.address %}
             {{ site.address.description }}, <br/> {{ site.address.street }}, <br/> {{ site.address.city }}
           {% else %}
-            Caritas House, 123 Charity Road, Victoria, Seychelles  <!-- Fallback -->
+            Caritas Seychelles<br/>
+            Centre Diocesain, Ex-Petit Seminaire,<br/> 
+            Le Chantier, Mahé, Seychelles  <!-- Fallback -->
           {% endif %}
         </address>
       </div>
     </div>
     
     <div class="text-center mt-3">
-      <p class="text-white mb-0">&copy; {{ now | date("yyyy") }} {{ site.title }}. All rights reserved.</p>
+      <p class="text-white mb-0">&copy;{{ now | date("yyyy") }} - {{ site.title }} Caritas Seychelles. All rights reserved.</p>
     </div>
   </div>
 </footer>

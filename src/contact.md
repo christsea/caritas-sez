@@ -32,7 +32,7 @@ title: "Contact"
   </a>
 </section>
  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<!-- Load Leaflet JS before your script -->
+<!-- Load Leaflet JS before script -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <!-- Leaflet JS -->
