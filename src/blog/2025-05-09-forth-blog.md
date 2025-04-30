@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "Your Post Title"
+title: "My Post Title"
 date: "2025-05-10"
 categories: ["community-outreach"]
 tags: ["volunteer", "update"]
@@ -20,4 +20,4 @@ Here’s the first paragraph of your post.
 
 Here’s an embedded image:
 
-![Alt text](/images/blog/photo.jpg)
+![Alt text](/images/blog/default-image-1200x900.jpg)

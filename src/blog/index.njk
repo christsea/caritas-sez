@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+title: "Blog"
+pagination:
+  data: collections.blog
+  size: 10
+  alias: posts
+eleventyExcludeFromCollections: true
+---
+
+<section class="container py-5">
+  <h1 class="mb-5">{{ title }}</h1>
+
+  {% for post in posts %}
+    <article class="post-preview bg-light p-4 mb-5 rounded">
+      <!-- Title & Meta -->
+      <h2 class="h4 mb-1">
+        <a href="{{ post.url }}" class="text-dark text-decoration-none">
+          {{ post.data.title }}
+        </a>
+      </h2>
+      <div class="text-muted small mb-3">
+        <i class="bi bi-calendar3"></i>
+        {{ post.date | readableDate }}
+      </div>
+
+      <!-- Responsive 4:3 Image (1200×900) with max‐height -->
+      {% if post.data.image %}
+      {% set base = post.data.image %}
+      {% set variant = base | replace('.jpg', '-1200x900.jpg') %}
+      <figure class="mb-3">
+        <img
+          src="{{ post.data.image }}"
+          alt="{{ post.data.title }}"
+          class="img-fluid rounded"
+          style="
+            width: 100%;
+            max-height: 40vh;      /* cap image at 30% of viewport height */
+            object-fit: cover;
+          "
+          loading="lazy"
+        >
+        {% if post.data.imageCredit %}
+          <figcaption class="small text-muted mt-1">
+            {{ post.data.imageCredit }}
+          </figcaption>
+        {% endif %}
+      </figure>
+      {% endif %}
+
+      <!-- Excerpt -->
+      <div class="mb-3">
+        {{ post.templateContent | striptags | truncate(200) }}
+      </div>
+
+      <!-- Read More -->
+      <a href="{{ post.url }}" class="btn btn-primary">
+        Read on →
+      </a>
+    </article>
+  {% endfor %}
+
+  {# Pagination Controls #}
+  {% if pagination.pages | length > 1 %}
+    <nav aria-label="Blog pagination" class="d-flex justify-content-between">
+      {% if pagination.href.previous %}
+        <a href="{{ pagination.href.previous }}" class="btn btn-outline-secondary">
+          ← Newer
+        </a>
+      {% else %}<span></span>{% endif %}
+      {% if pagination.href.next %}
+        <a href="{{ pagination.href.next }}" class="btn btn-primary">
+          Older →
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
+</section>

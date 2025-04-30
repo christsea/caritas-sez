@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/blog-post.njk
 title: "Volunteer Program Post 1"
 date: "2025-05-05"
 description: "Volunteers in action during our local events."

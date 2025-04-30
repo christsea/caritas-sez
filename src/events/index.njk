@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: "Upcoming Events"
+pagination:
+  data: collections.upcomingEvents
+  size: 6
+  alias: events
+eleventyExcludeFromCollections: true
+---
+
+<section class="container py-5">
+  <h1 class="mb-4">{{ title }}</h1>
+
+  {% if events | length %}
+    <div class="collection-grid">
+      {% for event in events %}
+        {% set item = event %}
+        {% include "partials/collection-card.njk" %}
+      {% endfor %}
+    </div>
+    {# same pagination nav as above #}
+  {% else %}
+    <p>No upcoming events.</p>
+  {% endif %}
+</section>

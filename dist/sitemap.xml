@@ -3,24 +3,8 @@
   
     
       <url>
-        <loc>/events/event1/</loc>
-        <lastmod>2025-01-10T00:00:00.000Z</lastmod>
-        <changefreq>monthly</changefreq>
-      </url>
-    
-  
-    
-      <url>
         <loc>/newsletters/newsletter1/</loc>
         <lastmod>2025-01-15T00:00:00.000Z</lastmod>
-        <changefreq>monthly</changefreq>
-      </url>
-    
-  
-    
-      <url>
-        <loc>/events/event2/</loc>
-        <lastmod>2025-03-10T00:00:00.000Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
     
@@ -53,14 +37,6 @@
       <url>
         <loc>/</loc>
         <lastmod>2025-04-13T10:46:14.762Z</lastmod>
-        <changefreq>monthly</changefreq>
-      </url>
-    
-  
-    
-      <url>
-        <loc>/events/</loc>
-        <lastmod>2025-04-13T10:46:14.773Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
     
@@ -189,6 +165,54 @@
       <url>
         <loc>/blog/2025-05-09-forth-blog/</loc>
         <lastmod>2025-05-10T00:00:00.000Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/events/2025-06-10-community-meetup/</loc>
+        <lastmod>2025-06-25T00:00:00.000Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/events/2025-06-25-community-health-workshop/</loc>
+        <lastmod>2025-06-25T00:00:00.000Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/events/2025-06-30-third-event/</loc>
+        <lastmod>2025-06-30T00:00:00.000Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/events/2025-07-12-fourth-event/</loc>
+        <lastmod>2025-07-12T00:00:00.000Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/events/2025-07-29-fifth-event/</loc>
+        <lastmod>2025-07-29T00:00:00.000Z</lastmod>
+        <changefreq>monthly</changefreq>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/events/2025-08-30-sixth-event/</loc>
+        <lastmod>2025-08-30T00:00:00.000Z</lastmod>
         <changefreq>monthly</changefreq>
       </url>
     

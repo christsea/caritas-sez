@@ -32,7 +32,7 @@ Founded in **1975** by **Bishop Felix Paul**, Caritas Seychelles began with a si
 3. **Youth Empowerment**  
    Vocational training to improve job prospects.
 
-![Caritas Seychelles volunteers distributing supplies](/images/what-we-do.jpg)  
+![Caritas Seychelles volunteers distributing supplies](/images/blog/what-we-do.jpg)  
 _Caption: Caritas Seychelles volunteers assisting local communities (Photo: Caritas Archive)._
 
 > "Caritas isn’t just aid—it’s hope. We walk with people in their struggles."  

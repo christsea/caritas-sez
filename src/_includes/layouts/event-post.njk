@@ -1,17 +1,12 @@
 ---
-layout: layouts/base.njk    # wrap this layout in your site’s header/footer
+layout: layouts/base.njk
 ---
-
-<article class="container py-5 post">
+<article class="container py-5">
   <header class="mb-4">
     <h1>{{ title }}</h1>
     <p class="text-muted">
       {{ date | readableDate }}
-      {% if tags %} · 
-        {% for tag in tags %}
-          <a href="/tags/{{ tag | slug }}/" class="badge bg-secondary text-white">{{ tag }}</a>
-        {% endfor %}
-      {% endif %}
+      {% if location %} · {{ location }}{% endif %}
     </p>
   </header>
 
@@ -20,7 +15,7 @@ layout: layouts/base.njk    # wrap this layout in your site’s header/footer
       <img
         src="{{ image }}"
         alt="{{ title }}"
-        class="post-hero-img"
+        class="post-hero-img w-100 h-100"
         loading="lazy"
       >
       {% if description %}
@@ -31,7 +26,7 @@ layout: layouts/base.njk    # wrap this layout in your site’s header/footer
     </figure>
   {% endif %}
 
-  <section class="post-body">
+  <section class="event-body">
     {{ content | safe }}
   </section>
 </article>

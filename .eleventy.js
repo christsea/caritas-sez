@@ -1,6 +1,8 @@
 const { DateTime } = require("luxon")
 const striptags = require("striptags")
 const slugify = require("slugify")
+const Image = require("@11ty/eleventy-img")
+const path = require("path")
 
 module.exports = function (eleventyConfig) {
   /* ─── Filters ─────────────────────────────────────────────────── */
@@ -62,14 +64,30 @@ module.exports = function (eleventyConfig) {
       )
     return [...cats]
   })
+
+  eleventyConfig.addCollection("blog", (collectionApi) => {
+    return (
+      collectionApi
+        // ① match all the markdown in src/blog
+        .getFilteredByGlob("src/blog/*.md")
+        // ② drop the listing template if it ever sneaks in
+        .filter((post) => post.filePathStem !== "/blog/index")
+        .reverse()
+    ) // newest first
+  })
+  /*
   eleventyConfig.addCollection("blog", (api) =>
     api.getFilteredByGlob("src/blog/*.md").reverse()
   )
+  */
   eleventyConfig.addCollection("newsletters", (api) =>
     api.getFilteredByGlob("src/newsletters/*.md").reverse()
   )
   eleventyConfig.addCollection("galleries", (api) =>
     api.getFilteredByGlob("src/galleries/*.md")
+  )
+  eleventyConfig.addCollection("events", (api) =>
+    api.getFilteredByGlob("src/events/*.md").reverse()
   )
   // Create 'team' collection
   eleventyConfig.addCollection("team", function (collectionApi) {
@@ -81,6 +99,14 @@ module.exports = function (eleventyConfig) {
       return (a.data.order || 999) - (b.data.order || 999)
     })
   })
+  // ① Filter only future events, sorted soonest→latest
+  eleventyConfig.addCollection("upcomingEvents", (collectionApi) => {
+    let now = Date.now()
+    return collectionApi
+      .getFilteredByGlob("src/events/*.{md,njk}")
+      .filter((evt) => Date.parse(evt.data.date) >= now)
+      .sort((a, b) => Date.parse(a.data.date) - Date.parse(b.data.date))
+  })
 
   /* ─── Passthrough Copy ────────────────────────────────────────── */
   eleventyConfig.addPassthroughCopy("src/css")
@@ -89,6 +115,64 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/downloads")
   eleventyConfig.addPassthroughCopy("src/admin") // <-- ensure CMS assets
   eleventyConfig.addPassthroughCopy("src/robots.txt")
+
+  // 1) Define an async shortcode to generate images
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "image",
+    async function (
+      src,
+      alt = "",
+      widths = [400, 800, 1200],
+      formats = ["avif", "webp", "jpeg"],
+      sizes = "100vw"
+    ) {
+      let relative = src.replace(/^\/+/, "") // remove leading slashes
+      let inputPath = path.join("src", relative) // e.g. "src/images/events/…"
+      let metadata = await Image(inputPath, {
+        widths,
+        formats,
+        outputDir: "./dist/images/generated/",
+        urlPath: "/images/generated/"
+      })
+
+      // Pick the smallest jpeg as the fallback src
+      let lowestSrc = metadata.jpeg[0]
+
+      // Create srcset strings for each format
+      let srcsetStrings = formats.map((format) =>
+        metadata[format]
+          .map((image) => `${image.url} ${image.width}w`)
+          .join(", ")
+      )
+
+      // Assemble the <picture> element
+      return `
+<picture>
+  ${formats
+    .map(
+      (format, i) => `
+    <source
+      type="image/${format}"
+      srcset="${srcsetStrings[i]}"
+      sizes="${sizes}"
+    >
+  `
+    )
+    .join("")}
+
+  <img
+    src="${lowestSrc.url}"
+    width="${lowestSrc.width}"
+    height="${lowestSrc.height}"
+    alt="${alt}"
+    loading="lazy"
+    decoding="async"
+    class="img-fluid rounded"
+  >
+</picture>
+`
+    }
+  )
 
   /* ─── Eleventy Config ────────────────────────────────────────── */
   return {

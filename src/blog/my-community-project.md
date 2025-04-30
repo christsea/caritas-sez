@@ -13,7 +13,7 @@ description: "A recap of our April 2025 beach cleanup event, where 50 volunteers
 
 # {{ title }}
 
-![Volunteers cleaning the beach](/images/beach-cleanup-2025.jpg)  
+![Volunteers cleaning the beach](/images/blog/default-image.jpg)  
 _Caption: Volunteers at Sunnyvale Beach, April 2025._
 
 On **April 15, 2025**, our team of 50 volunteers gathered at **Anse Police Beach** for a community cleanup. Here’s what we accomplished:
