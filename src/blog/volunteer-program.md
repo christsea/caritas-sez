@@ -1,11 +1,11 @@
 ---
-layout: layouts/blog-post.njk
 title: "Volunteer Program Post 1"
-date: "2025-05-05"
+date: 2025-05-10
+categories: ["community-outreach"]
+tags: ["volunteer", "update"]
+image: "blog/volunteers.jpg"
 description: "Volunteers in action during our local events."
 featured: true
-tags: ["volunteer-program"]
-image: "/images/blog/community-outreach.jpg" # optional cover
 ---
 
 Nullam condimentum, nisi non tempus tristique, enim metus tristique ipsum, sit amet semper ipsum ex ac felis. Praesent sed justo nec sapien eleifend auctor.

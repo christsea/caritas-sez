@@ -1,15 +1,20 @@
----
-permalink: /sitemap.xml
-eleventyExcludeFromCollections: true
+---js
+{
+  permalink: "sitemap.xml",
+  eleventyExcludeFromCollections: true
+}
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for page in collections.all %}
-    {% if not page.data.excludeFromSitemap %}
+    {% if page.url and page.url !== "/sitemap.xml/" %}
       <url>
-        <loc>{{ site.url }}{{ page.url | url }}</loc>
-        <lastmod>{{ page.date.toISOString() }}</lastmod>
+        <loc>{{ site.url }}{{ page.url | replace('/index.html', '') | replace('.html', '') }}</loc>
+        <lastmod>{{ page.date | default(now) | date('YYYY-MM-DD') }}</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          {% if page.url === "/" %}1.0{% elif page.data.sitemapPriority %}{{ page.data.sitemapPriority }}{% else %}0.5{% endif %}
+        </priority>
       </url>
     {% endif %}
   {% endfor %}

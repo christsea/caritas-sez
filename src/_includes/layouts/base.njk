@@ -44,10 +44,12 @@
     {% endif %}
   </nav>
 
-  <!-- Main Content -->
   <main class="container my-4">
-    {{ content | safe }}
+    {% block content %}
+      {{ content | safe }}
+    {% endblock %}
   </main>
+
 
   {% include "partials/footer.njk" %}
 

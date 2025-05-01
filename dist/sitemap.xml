@@ -4,216 +4,297 @@
     
       <url>
         <loc>/newsletters/newsletter1/</loc>
-        <lastmod>2025-01-15T00:00:00.000Z</lastmod>
+        <lastmod>YYYY-01-15 Jan 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/admin/</loc>
-        <lastmod>2025-04-13T10:46:04.016Z</lastmod>
+        <lastmod>YYYY-04-13 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/about/</loc>
-        <lastmod>2025-04-13T10:46:14.757Z</lastmod>
+        <lastmod>YYYY-04-13 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/contact/</loc>
-        <lastmod>2025-04-13T10:46:14.760Z</lastmod>
+        <lastmod>YYYY-04-13 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/</loc>
-        <lastmod>2025-04-13T10:46:14.762Z</lastmod>
+        <lastmod>YYYY-04-13 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          1.0
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/galleries/community-event/</loc>
-        <lastmod>2025-04-13T10:46:14.813Z</lastmod>
+        <lastmod>YYYY-04-13 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/galleries/</loc>
-        <lastmod>2025-04-13T10:46:14.815Z</lastmod>
+        <lastmod>YYYY-04-13 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/newsletters/</loc>
-        <lastmod>2025-04-13T10:46:14.870Z</lastmod>
+        <lastmod>YYYY-04-13 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/galleries/group-photo/</loc>
-        <lastmod>2025-04-15T07:56:11.517Z</lastmod>
+        <lastmod>YYYY-04-15 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/team/john-doe/</loc>
-        <lastmod>2025-04-16T22:22:05.965Z</lastmod>
+        <lastmod>YYYY-04-17 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/team/jane-doe/</loc>
-        <lastmod>2025-04-16T22:30:03.224Z</lastmod>
+        <lastmod>YYYY-04-17 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/newsletters/2025-04-26-my-new-newsletter/</loc>
-        <lastmod>2025-04-24T21:25:48.599Z</lastmod>
+        <lastmod>YYYY-04-25 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/newsletters/2025-04-24-2025-04-25-our-special-newsletter/</loc>
-        <lastmod>2025-04-24T21:44:35.615Z</lastmod>
+        <lastmod>YYYY-04-25 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/blog/caritas-seychelles/</loc>
-        <lastmod>2025-04-25T00:00:00.000Z</lastmod>
+        <lastmod>YYYY-04-25 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
-        <loc>/blog/beach-cleanup-2025/</loc>
-        <lastmod>2025-04-25T00:00:00.000Z</lastmod>
+        <loc>/blog/my-community-project/</loc>
+        <lastmod>YYYY-04-25 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/team/another.member/</loc>
-        <lastmod>2025-04-26T08:45:16.082Z</lastmod>
+        <lastmod>YYYY-04-26 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/team/extra-ordinary-member/</loc>
-        <lastmod>2025-04-26T11:54:49.599Z</lastmod>
+        <lastmod>YYYY-04-26 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/tags/</loc>
-        <lastmod>2025-04-26T21:34:26.300Z</lastmod>
+        <lastmod>YYYY-04-27 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/tags/blog/</loc>
-        <lastmod>2025-04-26T21:35:19.517Z</lastmod>
+        <lastmod>YYYY-04-27 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
-        <loc>/blog/2025-05-05-volunteer-program/</loc>
-        <lastmod>2025-05-05T00:00:00.000Z</lastmod>
+        <loc>/blog/forth-blog/</loc>
+        <lastmod>YYYY-05-10 May 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
-        <loc>/blog/2025-05-09-forth-blog/</loc>
-        <lastmod>2025-05-10T00:00:00.000Z</lastmod>
+        <loc>/blog/volunteer-program/</loc>
+        <lastmod>YYYY-05-10 May 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/events/2025-06-10-community-meetup/</loc>
-        <lastmod>2025-06-25T00:00:00.000Z</lastmod>
+        <lastmod>YYYY-06-25 Jun 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/events/2025-06-25-community-health-workshop/</loc>
-        <lastmod>2025-06-25T00:00:00.000Z</lastmod>
+        <lastmod>YYYY-06-25 Jun 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/events/2025-06-30-third-event/</loc>
-        <lastmod>2025-06-30T00:00:00.000Z</lastmod>
+        <lastmod>YYYY-06-30 Jun 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/events/2025-07-12-fourth-event/</loc>
-        <lastmod>2025-07-12T00:00:00.000Z</lastmod>
+        <lastmod>YYYY-07-12 Jul 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/events/2025-07-29-fifth-event/</loc>
-        <lastmod>2025-07-29T00:00:00.000Z</lastmod>
+        <lastmod>YYYY-07-29 Jul 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   
     
       <url>
         <loc>/events/2025-08-30-sixth-event/</loc>
-        <lastmod>2025-08-30T00:00:00.000Z</lastmod>
+        <lastmod>YYYY-08-30 Aug 2025</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
       </url>
     
   

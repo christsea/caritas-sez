@@ -1,5 +1,4 @@
 ---
-layout: layouts/post.njk
 title: "How Our Beach Cleanup Impacted 500+ Locals"
 date: 2025-04-25
 tags:
@@ -7,8 +6,8 @@ tags:
   - environment
   - volunteer
 featured: true
-permalink: /blog/beach-cleanup-2025/
 description: "A recap of our April 2025 beach cleanup event, where 50 volunteers removed 200kg of trash and engaged the local community."
+image: "blog/community-event.jpg"
 ---
 
 # {{ title }}

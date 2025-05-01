@@ -75,11 +75,7 @@ module.exports = function (eleventyConfig) {
         .reverse()
     ) // newest first
   })
-  /*
-  eleventyConfig.addCollection("blog", (api) =>
-    api.getFilteredByGlob("src/blog/*.md").reverse()
-  )
-  */
+
   eleventyConfig.addCollection("newsletters", (api) =>
     api.getFilteredByGlob("src/newsletters/*.md").reverse()
   )
@@ -108,12 +104,42 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => Date.parse(a.data.date) - Date.parse(b.data.date))
   })
 
+  eleventyConfig.addFilter("ensureLeadingSlash", function (path) {
+    return path.startsWith("/") ? path : "/" + path
+  })
+
+  eleventyConfig.addFilter("resolveImage", function (imagePath) {
+    // Handle both front matter paths and generated images
+    if (imagePath.includes("/generated/")) {
+      return imagePath
+    }
+    return `/images/${imagePath.replace(/^\/?images\//, "")}`
+  })
+
+  eleventyConfig.on("eleventy.after", async () => {
+    const fs = require("fs")
+    const testPath = path.join("dist", "images", "blog", "caritas-sey.jpg")
+    console.log("Image exists:", fs.existsSync(testPath), "at", testPath)
+  })
+
+  eleventyConfig.addFilter("fixImageUrl", function (url) {
+    if (!url) return ""
+    // Remove any duplicate slashes or incorrect prefixes
+    return url
+      .replace(/([^:]\/)\/+/g, "$1")
+      .replace(/^\/+/, "/")
+      .replace(/^\/src/, "")
+  })
+
   /* ─── Passthrough Copy ────────────────────────────────────────── */
   eleventyConfig.addPassthroughCopy("src/css")
   eleventyConfig.addPassthroughCopy("src/js")
-  eleventyConfig.addPassthroughCopy("src/images")
+  // eleventyConfig.addPassthroughCopy("src/images")
+  eleventyConfig.addPassthroughCopy({
+    "src/images": "images" // Ensures 1:1 mapping
+  })
   eleventyConfig.addPassthroughCopy("src/downloads")
-  eleventyConfig.addPassthroughCopy("src/admin") // <-- ensure CMS assets
+  eleventyConfig.addPassthroughCopy("src/admin")
   eleventyConfig.addPassthroughCopy("src/robots.txt")
 
   // 1) Define an async shortcode to generate images
@@ -131,8 +157,8 @@ module.exports = function (eleventyConfig) {
       let metadata = await Image(inputPath, {
         widths,
         formats,
-        outputDir: "./dist/images/generated/",
-        urlPath: "/images/generated/"
+        outputDir: "./dist/images/", // outputDir: "./dist/images/generated/",
+        urlPath: "/images/"
       })
 
       // Pick the smallest jpeg as the fallback src
@@ -176,6 +202,9 @@ module.exports = function (eleventyConfig) {
 
   /* ─── Eleventy Config ────────────────────────────────────────── */
   return {
+    // Make absolutely sure .md is processed
+    templateFormats: ["md", "njk", "html"],
+
     dir: {
       input: "src",
       includes: "_includes",

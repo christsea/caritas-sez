@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Blog"
+tags: ["blog"]
 pagination:
   data: collections.blog
   size: 10
@@ -10,7 +11,6 @@ eleventyExcludeFromCollections: true
 
 <section class="container py-5">
   <h1 class="mb-5">{{ title }}</h1>
-
   {% for post in posts %}
     <article class="post-preview bg-light p-4 mb-5 rounded">
       <!-- Title & Meta -->
@@ -24,20 +24,13 @@ eleventyExcludeFromCollections: true
         {{ post.date | readableDate }}
       </div>
 
-      <!-- Responsive 4:3 Image (1200×900) with max‐height -->
+      <!-- Image Section -->
       {% if post.data.image %}
-      {% set base = post.data.image %}
-      {% set variant = base | replace('.jpg', '-1200x900.jpg') %}
-      <figure class="mb-3">
+      <figure class="mb-3 post-image-wrapper">
         <img
-          src="{{ post.data.image }}"
+          src="/images/{{ post.data.image }}"
           alt="{{ post.data.title }}"
-          class="img-fluid rounded"
-          style="
-            width: 100%;
-            max-height: 40vh;      /* cap image at 30% of viewport height */
-            object-fit: cover;
-          "
+          class="post-preview__img"
           loading="lazy"
         >
         {% if post.data.imageCredit %}
@@ -76,3 +69,31 @@ eleventyExcludeFromCollections: true
     </nav>
   {% endif %}
 </section>
+
+<style>
+  /* Image Styles */
+  .post-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.375rem; /* matches rounded class */
+  }
+  
+  .post-image {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .post-image:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .post-image {
+      max-height: 30vh;
+    }
+  }
+</style>

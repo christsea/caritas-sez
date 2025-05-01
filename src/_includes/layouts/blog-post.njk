@@ -1,37 +1,29 @@
----
-layout: layouts/base.njk    # wrap this layout in your site’s header/footer
----
+{% extends "layouts/base.njk" %}
 
-<article class="container py-5 post">
-  <header class="mb-4">
-    <h1>{{ title }}</h1>
-    <p class="text-muted">
-      {{ date | readableDate }}
-      {% if tags %} · 
-        {% for tag in tags %}
-          <a href="/tags/{{ tag | slug }}/" class="badge bg-secondary text-white">{{ tag }}</a>
-        {% endfor %}
-      {% endif %}
-    </p>
-  </header>
+{% block content %}
 
-  {% if image %}
-    <figure class="post-hero mb-5 overflow-hidden rounded">
-      <img
-        src="{{ image }}"
-        alt="{{ title }}"
-        class="post-hero-img"
-        loading="lazy"
-      >
-      {% if description %}
-        <figcaption class="mt-2 text-muted small">
-          {{ description }}
-        </figcaption>
-      {% endif %}
-    </figure>
-  {% endif %}
-
-  <section class="post-body">
-    {{ content | safe }}
+  {# 2. Hero banner #}
+  <section class="post-hero mb-4"
+    style="background-image: url('{{ '/images/' | url }}{{ image }}');
+          height: 40vh; min-height: 30vh; max-height: 45vh;
+          background-size: cover; background-position: center;"
+    aria-label="Post hero">
   </section>
-</article>
+
+  {# 3. Your post content #}
+  <article class="post-content container py-4">
+    <header class="mb-4">
+      <h1>{{ page.data.title }}</h1>
+      <p class="text-muted small">
+        {{ page.date | readableDate }}
+        {% if page.data.categories %}
+          · <a href="/categories/{{ page.data.categories[0] }}/" class="text-decoration-none">
+              {{ page.data.categories[0] | replace('-', ' ') }}
+            </a>
+        {% endif %}
+      </p>
+    </header>
+
+    {{ content | safe }}
+  </article>
+{% endblock %}

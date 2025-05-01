@@ -505,30 +505,32 @@ h6 {
 }
 
 .post-preview {
-  background-color: #f4f6fa; /* pale block */
+  background-color: #f4f6fa;
 }
 .post-preview .meta i {
   margin-right: 0.25rem;
   vertical-align: text-bottom;
 }
-* — Fixed-height “banner” for single post images — */ .post-hero {
-  position: relative;
+
+/* ============ */
+/* BLOG LISTING IMAGES ONLY */
+/* ============ */
+.post-preview__img {
   width: 100%;
-  height: 35vh; /* try 25vh–45vh to taste */
-  overflow: hidden;
+  height: 400px; /* Fixed height works better than vh for listings */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
 }
 
-.post-hero-img {
-  object-fit: cover; /* crop to fill */
-  width: 100%;
-  height: 100%;
+.post-preview__img:hover {
+  transform: scale(1.02);
 }
 
-/* Ensure object-fit utility is available */
-.object-fit-cover {
-  object-fit: cover !important;
-}
-
-.ratio-4x3 {
-  max-height: 40vh; /* cap at 40% of viewport height */
+@media (max-width: 768px) {
+  .post-preview__img {
+    height: 150px;
+  }
 }

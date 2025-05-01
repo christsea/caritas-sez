@@ -1,5 +1,4 @@
 ---
-layout: layouts/post.njk
 title: "Caritas Seychelles: 50 Years of Empowering the Vulnerable"
 date: 2025-04-25
 tags:
@@ -7,9 +6,8 @@ tags:
   - Seychelles
   - non-profit
 featured: true
-permalink: /blog/caritas-seychelles/
 description: "Since 1975, Caritas Seychelles has provided food, education, disaster relief, and spiritual support to marginalized communities under the Catholic Church."
-image: /images/blog/default-image.jpg
+image: "blog/caritas-meeting.jpg"
 ---
 
 # {{ title }}
