@@ -2,7 +2,7 @@
 title: "My Fourth Post"
 date: 2025-05-10
 categories: ["community-outreach"]
-tags: ["volunteer", "update"]
+tags: ["osts", "volunteer", "update"]
 image: "blog/default-image.jpg"
 description: "A short teaser for your post."
 featured: false

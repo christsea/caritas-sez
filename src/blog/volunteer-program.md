@@ -2,7 +2,7 @@
 title: "Volunteer Program Post 1"
 date: 2025-05-10
 categories: ["community-outreach"]
-tags: ["volunteer", "update"]
+tags: ["posts", "volunteer", "update"]
 image: "blog/volunteers.jpg"
 description: "Volunteers in action during our local events."
 featured: true

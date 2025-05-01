@@ -104,6 +104,15 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => Date.parse(a.data.date) - Date.parse(b.data.date))
   })
 
+  eleventyConfig.addCollection("posts", function (collectionApi) {
+    return collectionApi.getFilteredByTag("posts").reverse()
+  })
+
+  // Add limit filter
+  eleventyConfig.addFilter("limit", function (array, limit) {
+    return array.slice(0, limit)
+  })
+
   eleventyConfig.addFilter("ensureLeadingSlash", function (path) {
     return path.startsWith("/") ? path : "/" + path
   })

@@ -479,6 +479,7 @@ h6 {
   color: var(--burgundy);
   font-weight: 700;
 }
+
 /* Grid wrapper for all collection listings */
 .collection-grid {
   display: grid;
@@ -510,6 +511,11 @@ h6 {
 .post-preview .meta i {
   margin-right: 0.25rem;
   vertical-align: text-bottom;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+  object-position: center;
 }
 
 /* ============ */

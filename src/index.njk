@@ -83,16 +83,16 @@ title: "Home"
   </div>
 </section>
 
-<!-- Latest News Section -->
+<!-- Latest News Section - 2 Columns -->
 <section class="py-5">
   <div class="container text-center">
     <h2 class="mb-4">Latest News</h2>
     {% set latestPosts = collections.blog | reverse %}
-    {% set latestPosts = latestPosts.slice(0, 3) %}
+    {% set latestPosts = latestPosts.slice(0, 2) %}  {# Changed from 3 to 2 #}
     {% if latestPosts.length %}
       <div class="row g-4">
         {% for post in latestPosts %}
-          <div class="col-md-4">
+          <div class="col-md-6">  {# Changed from col-md-4 to col-md-6 #}
             <div class="card h-100">
               {% if post.data.image %}
                 <img 

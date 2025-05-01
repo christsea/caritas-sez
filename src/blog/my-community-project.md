@@ -2,6 +2,7 @@
 title: "How Our Beach Cleanup Impacted 500+ Locals"
 date: 2025-04-25
 tags:
+  - posts
   - community
   - environment
   - volunteer

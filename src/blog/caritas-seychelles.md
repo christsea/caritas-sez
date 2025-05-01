@@ -2,6 +2,7 @@
 title: "Caritas Seychelles: 50 Years of Empowering the Vulnerable"
 date: 2025-04-25
 tags:
+  - posts
   - community
   - Seychelles
   - non-profit
