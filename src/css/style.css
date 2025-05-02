@@ -540,3 +540,55 @@ h6 {
     height: 150px;
   }
 }
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.event-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+/* Hero overlay tweak */
+.next-event-hero {
+  position: relative;
+}
+.next-event-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.next-event-hero .hero-overlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
+}
+.next-event-hero .btn {
+  margin-top: 1rem;
+}
+
+/* Grid of small cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.upcoming-card {
+  overflow: hidden;
+}
+.upcoming-card .card-img-top {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+.upcoming-card .card-body {
+  text-align: left;
+}

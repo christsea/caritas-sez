@@ -1,0 +1,16 @@
+<a href="{{ evt.url }}" class="card event-card text-decoration-none">
+  <div
+    class="card-img-top event-image"
+    style="background-image: url('/images/{{ evt.data.image }}');"
+    aria-label="{{ evt.data.title }} hero image"
+  ></div>
+
+  <div class="card-body">
+    <h3 class="card-title">{{ evt.data.title }}</h3>
+    <p class="card-text small text-muted">
+      {{ evt.data.date | readableDate }}
+      {% if evt.data.time %} · {{ evt.data.time }}{% endif %}
+    </p>
+    <p class="card-text">{{ evt.data.description | striptags | truncate(100) }}</p>
+  </div>
+</a>

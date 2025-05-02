@@ -1,7 +1,7 @@
 ---
 layout: layouts/event-post.njk
 title: "Community Health Workshop"
-date: "2025-06-25"
+date: 2025-06-25
 location: "St. Mary’s Hall, Victoria"
 image: "events/default-image.jpg"
 caption: "Participants practice first‐aid techniques under instructor guidance."

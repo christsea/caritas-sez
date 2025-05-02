@@ -1,7 +1,7 @@
 ---
 layout: layouts/event-post.njk
 title: "Event six"
-date: "2025-08-30"
+date: 2025-08-30
 location: "North East Point, Beach"
 image: "events/default-image.jpg"
 caption: "Participants practice first‐aid techniques under instructor guidance."

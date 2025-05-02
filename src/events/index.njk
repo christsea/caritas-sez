@@ -1,25 +1,58 @@
 ---
 layout: layouts/base.njk
-title: "Upcoming Events"
-pagination:
-  data: collections.upcomingEvents
-  size: 6
-  alias: events
-eleventyExcludeFromCollections: true
+title: Our Events
 ---
+<section class="container py-4">
+  <h1>{{ title }}</h1>
+  <p>We don’t run on a fixed calendar—check back regularly for new activities!</p>
+</section>
 
-<section class="container py-5">
-  <h1 class="mb-4">{{ title }}</h1>
+{% set upcoming = collections.upcomingEvents %}
+{% if upcoming.length %}
+  {# Spotlight the very next event #}
+  {% set first = upcoming[0] %}
+  <section class="next-event-hero mb-5" style="
+      background-image: url('/images/{{ first.data.image }}');
+      height: 50vh;
+      background-size: cover;
+      background-position: center;
+  " aria-label="Next event spotlight">
+    <div class="hero-overlay container text-white">
+      <h2>Next Up</h2>
+      <h3>{{ first.data.title }}</h3>
+      <p>
+        <time datetime="{{ first.data.date }}">{{ first.data.date | readableDate }}</time>
+        {% if first.data.time %} · {{ first.data.time }}{% endif %}
+      </p>
+      <a href="{{ first.url }}" class="btn btn-light">Learn More & RSVP</a>
+    </div>
+  </section>
 
-  {% if events | length %}
-    <div class="collection-grid">
-      {% for event in events %}
-        {% set item = event %}
-        {% include "partials/collection-card.njk" %}
+  {# Render the rest as small cards #}
+  {% if upcoming.length > 1 %}
+  <section class="container upcoming-cards mb-5">
+    <h2>More Upcoming</h2>
+    <div class="cards-grid">
+      {% for evt in upcoming.slice(1) %}
+        <a href="{{ evt.url }}" class="card upcoming-card text-decoration-none">
+          <img
+            src="{{ evt.data.image }}"
+            alt="{{ evt.data.title }} hero image"
+            class="card-img-top"
+          >
+          <div class="card-body p-2">
+            <h3 class="h6 mb-1">{{ evt.data.title }}</h3>
+            <p class="small text-muted mb-0">
+              <time datetime="{{ evt.data.date }}">{{ evt.data.date | readableDate }}</time>
+            </p>
+          </div>
+        </a>
       {% endfor %}
     </div>
-    {# same pagination nav as above #}
-  {% else %}
-    <p>No upcoming events.</p>
+  </section>
   {% endif %}
-</section>
+{% else %}
+  <section class="container py-4">
+    <p>No events coming up—stay tuned!</p>
+  </section>
+{% endif %}

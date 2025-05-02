@@ -1,9 +1,9 @@
 ---
 layout: layouts/event-post.njk
 title: "Community Meet-up"
-date: "2025-06-25"
+date: 2025-06-25
 location: "North East Point, Beach"
-image: "events/community-meeting.jpg"
+image: "events/volunteers.jpg"
 caption: "Participants practice first‐aid techniques under instructor guidance."
 tags:
   - community
