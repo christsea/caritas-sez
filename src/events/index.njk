@@ -56,3 +56,30 @@ title: Our Events
     <p>No events coming up—stay tuned!</p>
   </section>
 {% endif %}
+
+<section class="container past-events-archive mb-5">
+  <h2>Past Events</h2>
+
+  {% for bucket in collections.pastEventsByYear %}
+    <details class="year-group mb-3"{% if loop.first %} open{% endif %}>
+      <summary>
+        {{ bucket.year }} ({{ bucket.events.length }})
+      </summary>
+      <ul class="list-unstyled ms-3 mt-2">
+        {% for evt in bucket.events %}
+          <li class="mb-1">
+            <a href="{{ evt.url }}">
+              <time datetime="{{ evt.data.date }}">{{ evt.data.date | readableDate }}</time>
+               – {{ evt.data.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </details>
+  {% endfor %}
+
+  {% if collections.pastEventsByYear | length == 0 %}
+    <p>No past events yet.</p>
+  {% endif %}
+</section>
+

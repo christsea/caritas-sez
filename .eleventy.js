@@ -140,6 +140,27 @@ module.exports = function (eleventyConfig) {
       .replace(/^\/src/, "")
   })
 
+  eleventyConfig.addCollection("pastEventsByYear", (collectionApi) => {
+    let now = Date.now()
+    let past = collectionApi
+      .getFilteredByGlob("src/events/*.md")
+      .filter((evt) => Date.parse(evt.data.date) < now)
+      .sort((a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)) // newest first
+
+    // Group by year
+    let byYear = {}
+    past.forEach((evt) => {
+      let year = new Date(evt.data.date).getFullYear()
+      if (!byYear[year]) byYear[year] = []
+      byYear[year].push(evt)
+    })
+
+    // Turn into an array of { year, events }
+    return Object.entries(byYear)
+      .map(([year, evts]) => ({ year, events: evts }))
+      .sort((a, b) => b.year - a.year)
+  })
+
   /* ─── Passthrough Copy ────────────────────────────────────────── */
   eleventyConfig.addPassthroughCopy("src/css")
   eleventyConfig.addPassthroughCopy("src/js")

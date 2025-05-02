@@ -592,3 +592,24 @@ h6 {
 .upcoming-card .card-body {
   text-align: left;
 }
+
+.past-events-archive summary {
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.past-events-archive details[open] summary {
+  color: var(--primary-color);
+}
+
+.past-events-archive details {
+  border-left: 2px solid #ccc;
+  padding-left: 1rem;
+}
+
+.past-events-archive ul {
+  margin: 0;
+  padding: 0;
+}
