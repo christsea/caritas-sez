@@ -36,7 +36,7 @@ title: Our Events
       {% for evt in upcoming.slice(1) %}
         <a href="{{ evt.url }}" class="card upcoming-card text-decoration-none">
           <img
-            src="{{ evt.data.image }}"
+            src="/images/{{ evt.data.image }}"
             alt="{{ evt.data.title }} hero image"
             class="card-img-top"
           >

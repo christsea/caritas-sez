@@ -431,7 +431,7 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 1rem 1.5rem rgba(128, 0, 32, 0.15);
 }
-.bg-primary {
+.bg-warning {
   /*background-color: var(--burgundy-light) !important;*/
   background-color: var(--burgundy-gold) !important;
 }
@@ -571,9 +571,11 @@ h6 {
   justify-content: flex-end;
   padding-bottom: 2rem;
 }
+/*
 .next-event-hero .btn {
   margin-top: 1rem;
 }
+  */
 
 /* Grid of small cards */
 .cards-grid {
