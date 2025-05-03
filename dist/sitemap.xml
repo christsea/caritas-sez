@@ -14,17 +14,6 @@
   
     
       <url>
-        <loc>/admin/</loc>
-        <lastmod>YYYY-04-13 Apr 2025</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>
-          0.5
-        </priority>
-      </url>
-    
-  
-    
-      <url>
         <loc>/about/</loc>
         <lastmod>YYYY-04-13 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
@@ -214,6 +203,17 @@
       <url>
         <loc>/events/2025-04-30-sixth-event/</loc>
         <lastmod>YYYY-04-30 Apr 2025</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/blog/test-post/</loc>
+        <lastmod>YYYY-05-3 May 2025</lastmod>
         <changefreq>monthly</changefreq>
         <priority>
           0.5

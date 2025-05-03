@@ -169,7 +169,7 @@ module.exports = function (eleventyConfig) {
     "src/images": "images" // Ensures 1:1 mapping
   })
   eleventyConfig.addPassthroughCopy("src/downloads")
-  eleventyConfig.addPassthroughCopy("src/admin")
+  eleventyConfig.addPassthroughCopy("admin")
   eleventyConfig.addPassthroughCopy("src/robots.txt")
 
   // 1) Define an async shortcode to generate images
