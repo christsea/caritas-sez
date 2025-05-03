@@ -1,9 +1,7 @@
 ---
-layout: layouts/base.njk
-title: "Newsletter January 2025"
-date: 2025-01-15
-excerpt: "Newsletter January 2025 - Download your copy..."
-link: "/downloads/dummy-newsletter.pdf"
+title: 2025-01-18-my-new-newsletter
+date: 2025-01-18T21:25:48.599Z
+file: /images/dummy-newsletter2.pdf
 ---
 
 <section class="newsletter-detail" style="padding: 2em; max-width: 800px; margin: 0 auto; text-align: center;">
