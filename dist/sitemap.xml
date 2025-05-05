@@ -212,17 +212,6 @@
   
     
       <url>
-        <loc>/blog/test-post/</loc>
-        <lastmod>YYYY-05-3 May 2025</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>
-          0.5
-        </priority>
-      </url>
-    
-  
-    
-      <url>
         <loc>/blog/forth-blog/</loc>
         <lastmod>YYYY-05-10 May 2025</lastmod>
         <changefreq>monthly</changefreq>
