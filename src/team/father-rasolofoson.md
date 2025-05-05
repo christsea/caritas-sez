@@ -1,8 +1,8 @@
 ---
-name: "Jane Doe"
-role: "Executive Secretary"
+name: "Father Eloi Herve RASOLOFOSON"
+role: "Chaplain"
 photo: "/images/team/default-avatar.jpg" # 300–400 px square is ideal
 order: 2 # lower = earlier in grid
 ---
 
-The unfatigable Jane.
+Short bio on Father Eloi Herve RASOLOFOSON.

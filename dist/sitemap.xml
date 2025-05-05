@@ -91,7 +91,7 @@
   
     
       <url>
-        <loc>/team/john-doe/</loc>
+        <loc>/team/bishop-harel/</loc>
         <lastmod>YYYY-04-17 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
         <priority>
@@ -102,7 +102,7 @@
   
     
       <url>
-        <loc>/team/jane-doe/</loc>
+        <loc>/team/father-rasolofoson/</loc>
         <lastmod>YYYY-04-17 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
         <priority>
@@ -146,7 +146,7 @@
   
     
       <url>
-        <loc>/team/another.member/</loc>
+        <loc>/team/micole-bistoquet/</loc>
         <lastmod>YYYY-04-26 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
         <priority>
@@ -157,7 +157,7 @@
   
     
       <url>
-        <loc>/team/extra-ordinary-member/</loc>
+        <loc>/team/jennifer-memee/</loc>
         <lastmod>YYYY-04-26 Apr 2025</lastmod>
         <changefreq>monthly</changefreq>
         <priority>
@@ -203,6 +203,61 @@
       <url>
         <loc>/events/2025-04-30-sixth-event/</loc>
         <lastmod>YYYY-04-30 Apr 2025</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/team/anne-pool/</loc>
+        <lastmod>YYYY-05-5 May 2025</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/team/jane-joubert/</loc>
+        <lastmod>YYYY-05-5 May 2025</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/team/christianne-fock-tave/</loc>
+        <lastmod>YYYY-05-5 May 2025</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/team/jina-labiche/</loc>
+        <lastmod>YYYY-05-5 May 2025</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>
+          0.5
+        </priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/team/tiffania-solin/</loc>
+        <lastmod>YYYY-05-5 May 2025</lastmod>
         <changefreq>monthly</changefreq>
         <priority>
           0.5
